@@ -1,6 +1,6 @@
 # Carrousel — « 3 critères pour juger une app de révision »
 
-**Statut** : idée, slides à produire
+**Statut** : produit
 **Format** : 3 slides · s'adresse aux **parents**, cible secondaire
 **Levier** : gratuit sans pub (levier 4)
 **Saison** : rentrée, re-poussable avant les bacs blancs
@@ -31,7 +31,13 @@ décrit des critères, on ne tape sur personne.
 
 ## Légende
 
-> à écrire
+> 3 critères pour savoir si une app de révision vaut le coup :
+>
+> 1. Elle annonce le programme et le niveau qu'elle couvre. Sinon elle ne suit pas les œuvres qui tombent à l'épreuve.
+> 2. Gratuite sans carte bancaire. Un essai qui réclame un moyen de paiement s'arrête vite.
+> 3. Elle entraîne l'oral autant que l'écrit — l'entretien compte autant, et c'est le moins travaillé.
+>
+> euphemisme.fr coche les trois. Gratuit, sans pub.
 
 ## Hashtags
 

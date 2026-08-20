@@ -1,6 +1,6 @@
 # Carrousel — « Relever avant d'interpréter »
 
-**Statut** : idée, slides à produire
+**Statut** : produit
 **Format** : 4 slides · méthode du commentaire et de l'explication linéaire
 **Levier** : anti-charge mentale (levier 1) + humour de prof (levier 6)
 **Saison** : intemporel, idéal avant les premiers devoirs (octobre)
@@ -33,7 +33,14 @@ neutre écrite pour la démonstration. Surtout pas une fausse citation d'une œu
 
 ## Légende
 
-> à écrire
+> Ton commentaire ressemble à un résumé ? C'est l'ordre qui cloche.
+>
+> 1. Relever d'abord : temps verbaux, pronoms, champs lexicaux, ruptures.
+> 2. Interpréter ensuite : je cite le mot, je nomme le procédé, je dis l'effet.
+>
+> Pas de relevé, pas d'idée. C'est ce qui sépare la paraphrase de l'analyse.
+>
+> La méthode complète, gratuitement → euphemisme.fr
 
 ## Hashtags
 

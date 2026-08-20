@@ -1,6 +1,6 @@
 # Carrousel — « Les 12 œuvres du programme 2026 »
 
-**Statut** : idée, slides à produire
+**Statut** : produit
 **Format** : 5 slides · carte de référence + segmentation d'audience
 **Levier** : segmentation par œuvre (levier 7) + savoir snackable (levier 5)
 **Saison** : maintenant — les élèves découvrent leur liste en septembre
@@ -34,7 +34,15 @@ brief. Une faute sur un titre au programme serait fatale pour une app de frança
 
 ## Légende
 
-> à écrire
+> Les 12 œuvres au programme de 1re cette année, par objet d'étude 👇
+>
+> Poésie : Rimbaud, Ponge, Dorion.
+> Roman : Chrétien de Troyes, Zola, Schwarz-Bart.
+> Théâtre : Corneille, Musset, Sarraute.
+> Littérature d'idées : La Boétie, Fontenelle, Graffigny.
+>
+> La tienne, c'est laquelle ? Dis-la en commentaire, on fera une vidéo dessus.
+> Une leçon par œuvre, gratuitement → euphemisme.fr
 
 ## Hashtags
 

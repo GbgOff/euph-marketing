@@ -282,3 +282,104 @@ html, body { width: 1080px; height: 1440px; overflow: hidden; }
 .source { font-size: 23px; font-weight: 700; color: var(--wolf); margin-top: 6px; }
 .gloss  { font-size: 27px; font-weight: 600; line-height: 1.38; color: var(--wolf); margin-top: 18px; }
 .gloss b { font-weight: 900; color: var(--fox-dark); }
+
+/* ===========================================================
+   Composants ajoutés pour les séries de septembre
+   =========================================================== */
+
+/* ---- liste d'œuvres (une ligne = un titre au programme) ---- */
+.genre {
+  font-size: 25px; font-weight: 900;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--fox-dark);
+}
+.oeuvres { margin-top: 8px; }
+.oeuvre {
+  padding: 34px 0;
+  border-top: 3px solid rgba(50,45,39,.12);
+}
+.oeuvre:last-child { border-bottom: 3px solid rgba(50,45,39,.12); }
+.oeuvre .t { font-size: 42px; font-weight: 900; color: var(--eel); line-height: 1.1; }
+.oeuvre .a { font-size: 28px; font-weight: 800; color: var(--fox-dark); margin-top: 6px; }
+.oeuvre .p { font-size: 26px; font-weight: 600; color: var(--wolf); margin-top: 6px; }
+
+/* ---- deux blocs comparés (avant / après) ---- */
+.compare { display: flex; flex-direction: column; gap: 26px; }
+.compare .bloc { padding: 32px 36px; border-radius: 30px; }
+.compare .ko { background: rgba(240,121,138,.14); border: 4px solid rgba(240,121,138,.45); }
+.compare .ok { background: rgba(255,152,87,.16); border: 4px solid var(--fox); }
+.compare .lab {
+  font-size: 22px; font-weight: 900;
+  letter-spacing: .14em; text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.compare .ko .lab { color: #C4485C; }
+.compare .ok .lab { color: var(--fox-dark); }
+.compare .txt { font-size: 30px; font-weight: 700; line-height: 1.3; color: var(--eel); }
+
+/* ---- liste d'étapes numérotées ---- */
+.etapes { list-style: none; }
+.etapes li {
+  display: flex; align-items: baseline; gap: 22px;
+  padding: 22px 0;
+  border-top: 3px solid rgba(50,45,39,.10);
+  font-size: 31px; font-weight: 700; color: var(--eel);
+}
+.etapes li:last-child { border-bottom: 3px solid rgba(50,45,39,.10); }
+.etapes li .n {
+  font-size: 23px; font-weight: 900; color: var(--fox-dark);
+  min-width: 40px; letter-spacing: .08em;
+}
+.etapes li span.t { color: var(--wolf); font-weight: 600; }
+
+/* ---- rangée de cœurs (vies) ---- */
+.coeurs { display: flex; gap: 20px; }
+.coeurs .c {
+  width: 92px; height: 92px;
+  border-radius: 28px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 46px;
+  background: rgba(240,121,138,.18);
+  border: 4px solid rgba(240,121,138,.5);
+}
+.coeurs .c.off { background: rgba(50,45,39,.05); border-color: rgba(50,45,39,.12); filter: grayscale(1); opacity: .45; }
+
+/* ---- grande statistique ---- */
+.stat { display: flex; align-items: baseline; gap: 22px; }
+.stat .n { font-size: 150px; font-weight: 900; color: var(--fox-dark); line-height: .9; }
+.stat .u { font-size: 42px; font-weight: 900; color: var(--eel); }
+
+/* ---- bloc produit réutilisable (slide de clôture) ---- */
+.produit { padding: 42px 44px 44px; }
+.produit .tete { display: flex; align-items: center; gap: 24px; margin-bottom: 30px; }
+.produit .tete .foxbadge { width: 104px; height: 104px; }
+.produit .tete .foxbadge svg { width: 78px; height: 78px; margin-top: 3px; }
+.produit .nom { font-size: 46px; font-weight: 900; color: var(--eel); line-height: 1.05; }
+.produit .tag { font-size: 25px; font-weight: 700; color: var(--wolf); margin-top: 8px; }
+.produit .pills { display: flex; gap: 16px; margin-top: 30px; flex-wrap: wrap; }
+.produit .pills .pill { font-size: 22px; padding: 12px 24px; border-width: 3px; border-bottom-width: 7px; }
+
+.urlbig { font-size: 42px; font-weight: 900; color: var(--eel); }
+.urlbig .arrow { color: var(--fox); }
+
+.sous-titre {
+  font-size: 27px; font-weight: 700; color: var(--wolf);
+  letter-spacing: .02em;
+}
+
+/* .proofs sert aussi hors de la carte produit */
+.proofs { list-style: none; }
+.proofs li {
+  display: flex; align-items: baseline; gap: 20px;
+  font-size: 28px; font-weight: 700; color: var(--eel);
+  padding: 15px 0;
+  border-top: 3px solid rgba(50,45,39,.09);
+}
+.proofs li .n {
+  font-size: 22px; font-weight: 900; color: var(--fox-dark);
+  letter-spacing: .1em; min-width: 46px;
+}
+.proofs li span.t { color: var(--wolf); font-weight: 600; }
+
+/* le sup dans un contexte majuscule doit rester en bas de casse */
+.sous-titre sup { text-transform: lowercase; font-size: .62em; }

@@ -21,6 +21,8 @@ lecteur n'installe jamais l'app.
   feature en slide 2, bloc produit un peu plus complet ensuite.
 - La dernière slide reste une slide de contenu (quiz, chute, récap) qui porte le CTA — pas une
   bannière publicitaire collée à la fin.
+- **Calendrier** : écrit **vers le 10 juin**, oral **fin juin** (estimation, cf. brief). Dans les
+  visuels, écrire « mi-juin » / « fin juin », jamais une date précise non officielle.
 - Interdits : promesse de note, dénigrement des profs, affiliation Duolingo, faute de français.
 - **Tout se joue dans le visuel et la légende.** Pas de « réponse en commentaire épinglé » :
   la réponse d'un quiz, la chute, la précision — tout va dans la **légende**. Un commentaire à

@@ -1,6 +1,6 @@
 # Carrousel — « Pourquoi limiter tes erreurs te fait apprendre plus vite »
 
-**Statut** : idée, slides à produire
+**Statut** : produit
 **Format** : 4 slides · conseil cognitif qui *est* une feature
 **Levier** : gamification assumée (levier 3)
 **Saison** : intemporel
@@ -33,7 +33,13 @@ Ne pas basculer vers « l'app te punit ». Le ton de la marque ne culpabilise ja
 
 ## Légende
 
-> à écrire
+> Tu réponds trop vite. Pas parce que tu es pressée : parce que se tromper ne te coûte rien.
+>
+> Quand l'erreur est gratuite, le cerveau devine au lieu d'aller chercher. Et deviner, ce n'est pas se souvenir.
+>
+> À tester sans aucune app : 5 bâtons en haut de ta feuille, une erreur = un bâton barré. Plus de bâtons, tu t'arrêtes et tu relis la leçon.
+>
+> Gratuit → euphemisme.fr
 
 ## Hashtags
 

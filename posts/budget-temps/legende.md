@@ -1,6 +1,6 @@
 # Carrousel — « Combien de temps il te reste vraiment »
 
-**Statut** : idée, slides à produire
+**Statut** : produit
 **Format** : 3 slides · schéma pur, aucune photo
 **Levier** : anti-charge mentale (levier 1)
 **Saison** : rentrée, re-déclinable en janvier avec d'autres chiffres
@@ -23,15 +23,21 @@ Suite logique du post « Le bac, c'est dans longtemps », en version chiffrée e
 
 Mise en page : reprendre le langage graphique des barres de `astuces-revisions/02.html`.
 
-## À vérifier avant production
+## Sur les dates
 
-⚠️ **Les dates de l'EAF 2026 ne sont pas dans le brief.** Il faut la date officielle de l'écrit
-avant de produire, sinon les chiffres sont faux — et un chiffre faux sur un post de méthode
-décrédibilise tout le reste. Ne rien estimer au jugé.
+Écrit **mi-juin**, oral **fin juin** : estimation de travail, pas le calendrier officiel.
+Les visuels disent « mi-juin » / « fin juin », jamais une date précise. À revérifier quand
+le calendrier de l'EAF sort — les 40 semaines en dépendent.
 
 ## Légende
 
-> à écrire
+> 40 semaines entre la rentrée et l'écrit. Moins 8 de vacances : il en reste 32.
+>
+> L'écrit tombe mi-juin, l'oral fin juin. Ça paraît loin en septembre — c'est exactement pour ça qu'on s'y prend trop tard.
+>
+> 5 min par jour sur ces 40 semaines, ça fait plus de 20 h de révisions. Sans une seule soirée sacrifiée.
+>
+> Gratuit, sans pub → euphemisme.fr
 
 ## Hashtags
 
