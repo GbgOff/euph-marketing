@@ -19,10 +19,10 @@ qu'elle est la synthèse exacte des trois conseils précédents.
 >
 > 1. Relire ne sert à rien : ferme le cours et restitue de mémoire.
 > 2. Trois rappels courts (J+1, J+7, J+30) battent trois heures d'affilée.
-> 3. L'oral se travaille tout haut, debout, chronomètre en main — pas la veille.
-> 4. Ou tu fais les trois en 5 min par jour, gratuitement → euphemisme.fr
+> 3. L'oral se travaille tout haut, debout — pas la veille.
+> 4. Ou tu fais les trois en 5 min par jour.
 >
-> Programme officiel 2026, les 12 œuvres, l'écrit ET l'oral. Sans pub, sans carte bancaire.
+> Programme officiel 2026, les 12 œuvres, l'écrit et l'oral. Gratuit, sans pub → euphemisme.fr
 
 ## Hashtags
 

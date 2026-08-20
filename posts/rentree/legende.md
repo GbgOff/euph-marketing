@@ -6,14 +6,11 @@
 
 ## Légende
 
-> Le bac, c'est dans longtemps.
-> Enfin… dans 9 mois. C'est ça, un euphémisme 🦊
+> Le bac, c'est dans longtemps. Enfin… dans 9 mois. C'est ça, un euphémisme 🦊
 >
-> 5 min par jour d'ici juin, ça fait 22 h de révisions. Sans t'en rendre compte.
-> Le bac de français se gagne en septembre, pas la veille.
+> 5 min par jour d'ici juin = 22 h de révisions, sans t'en rendre compte.
 >
-> Programme officiel 2026, les 12 œuvres, l'écrit ET l'oral.
-> 100 % gratuit, zéro pub → euphemisme.fr
+> Programme officiel 2026, l'écrit et l'oral. Gratuit, sans pub → euphemisme.fr
 
 ## Hashtags
 

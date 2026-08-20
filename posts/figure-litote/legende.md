@@ -18,21 +18,15 @@ récompensent ceux qui restent. L'app est visible dès la première image, jamai
 
 ## Légende
 
-> Litote ou euphémisme ? Les deux disent moins que la réalité — mais pas dans le même but.
+> Litote ou euphémisme ? Les deux disent moins que la réalité, mais pas dans le même but.
 >
-> L'euphémisme atténue pour ADOUCIR : « il nous a quittés » pour ne pas dire « il est mort ».
-> La litote atténue pour RENFORCER : « Va, je ne te hais point » pour dire « je t'aime »
-> (Corneille, Le Cid — et Corneille est au programme cette année avec Le Menteur).
+> L'euphémisme atténue pour ADOUCIR : « il nous a quittés » au lieu de « il est mort ».
+> La litote atténue pour RENFORCER : « Va, je ne te hais point » = « je t'aime » (Corneille, Le Cid).
 >
-> Alors, « tu ne t'en sors pas mal », c'est quoi ? Réponse en commentaire épinglé 👇
+> La réponse du quiz : « tu ne t'en sors pas mal » est une LITOTE — tu t'en sors très bien.
 >
-> Les 9 figures de style à réviser en 5 min par jour, gratuitement → euphemisme.fr
+> Les 9 figures à réviser en 5 min par jour, gratuitement → euphemisme.fr
 
-## Commentaire épinglé (à poster soi-même)
-
-> LITOTE ✅ « Tu ne t'en sors pas mal » = tu t'en sors très bien. La double négation atténue la
-> forme pour renforcer le sens. Ce n'est pas un euphémisme : un euphémisme adoucit une réalité
-> désagréable, et ici il n'y a rien de désagréable à adoucir.
 
 ## Hashtags
 
