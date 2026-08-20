@@ -1,0 +1,17 @@
+{
+  "figure": {
+    "slides": "figure-",
+    "caption": "figure-litote-legende.md",
+    "titre": "Litote ou euphémisme"
+  },
+  "astuces": {
+    "slides": "astuce-",
+    "caption": "carrousel-astuces-legende.md",
+    "titre": "4 astuces pour accélérer tes révisions"
+  },
+  "rentree": {
+    "slides": "tiktok-",
+    "caption": "tiktok-01-legende.md",
+    "titre": "Le bac, c'est dans longtemps"
+  }
+}

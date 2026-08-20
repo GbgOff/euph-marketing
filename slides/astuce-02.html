@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme — Astuce 02</title>
+<link rel="stylesheet" href="euphemisme.css">
+<style>
+  .title {
+    position: absolute;
+    top: 268px; left: 76px; right: 60px;
+    font-size: 118px;
+    line-height: .95;
+    z-index: 25;
+  }
+
+  .lead { position: absolute; left: 76px; top: 700px; width: 470px; z-index: 30; }
+  .feature { position: absolute; left: 76px; top: 1010px; width: 470px; z-index: 30; }
+
+  /* ---- schéma : 3 rappels courts ---- */
+  .curve {
+    position: absolute;
+    right: 88px; bottom: 232px;
+    display: flex; align-items: flex-end; gap: 26px;
+    z-index: 20;
+  }
+  .curve .col { width: 116px; text-align: center; }
+  .curve .bar {
+    border-radius: 26px 26px 10px 10px;
+    box-shadow: 0 10px 0 rgba(50,45,39,.07);
+  }
+  .curve .c1 .bar { height: 168px; background: var(--fox-light); }
+  .curve .c2 .bar { height: 268px; background: var(--fox); }
+  .curve .c3 .bar { height: 372px; background: var(--fox-dark); }
+  .curve .lab {
+    margin-top: 22px;
+    font-size: 30px; font-weight: 900;
+    color: var(--eel);
+  }
+  .curve .cap {
+    position: absolute;
+    right: 0; bottom: -108px;
+    width: 520px;
+    text-align: right;
+    font-size: 24px; font-weight: 800;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--wolf);
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+
+  <div class="serie"><b>02</b> <span class="sep">&middot;</span> 4 astuces pour acc&eacute;l&eacute;rer tes r&eacute;visions</div>
+
+  <h1 class="title display">
+    R&eacute;vise<br>
+    juste avant<br>
+    <mark>d'oublier</mark>
+  </h1>
+
+  <p class="lead">Une le&ccedil;on relue une fois s'efface en deux jours. Revue &agrave;
+  <strong>J+1</strong>, <strong>J+7</strong> puis <strong>J+30</strong>, elle tient jusqu'en juin.
+  Trois rappels de cinq minutes battent trois heures d'affil&eacute;e.</p>
+
+  <p class="feature">Dans <b>Euph&eacute;misme</b>, la r&eacute;vision m&eacute;moire te repropose
+  toute seule ce que tu es en train d'oublier.</p>
+
+  <div class="curve">
+    <div class="col c1"><div class="bar"></div><div class="lab">J+1</div></div>
+    <div class="col c2"><div class="bar"></div><div class="lab">J+7</div></div>
+    <div class="col c3"><div class="bar"></div><div class="lab">J+30</div></div>
+    <div class="cap">Ce qu'il te reste en m&eacute;moire</div>
+  </div>
+
+</div>
+</body>
+</html>

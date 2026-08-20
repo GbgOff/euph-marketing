@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>MEMORA — slide 04</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .photo.crew {
+    top: 96px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 375px;
+    z-index: 5;
+    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+  }
+  .photo.crew img { object-position: 42% 30%; }
+
+  .baseline {
+    position: absolute;
+    top: 476px;
+    left: 64px;
+    right: 64px;
+    text-align: center;
+    font-size: 29px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .22em;
+    z-index: 25;
+  }
+  .baseline .accent { letter-spacing: inherit; }
+
+  .title {
+    position: absolute;
+    top: 556px;
+    left: 0;
+    width: 1080px;
+    text-align: center;
+    font-size: 178px;
+    z-index: 10;
+  }
+  .title .brand { letter-spacing: .01em; }
+  .title sup {
+    font-size: 48px;
+    vertical-align: 96px;
+  }
+
+  .stores {
+    position: absolute;
+    bottom: 122px;
+    left: 0;
+    width: 1080px;
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    z-index: 25;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="header">
+    <div>Memora&reg;</div>
+    <div>&copy;2026</div>
+  </div>
+
+  <div class="photo crew">
+    <img src="../assets/photo-d.jpg" alt="">
+  </div>
+
+  <div class="baseline">R&eacute;vise moins. <span class="accent">Retiens plus.</span></div>
+
+  <h1 class="title display">
+    T&eacute;l&eacute;charge<br>
+    <span class="brand">Memora<sup>&reg;</sup></span>
+  </h1>
+
+  <div class="stores">
+    <span class="pill solid">App Store</span>
+    <span class="pill solid">Google Play</span>
+    <span class="pill accent">Gratuit</span>
+  </div>
+
+  <div class="footer">
+    <div class="pagination">04<span>/</span>04</div>
+    <div style="font-weight:800; text-transform:uppercase; letter-spacing:.12em;">memora.app</div>
+  </div>
+</div>
+</body>
+</html>

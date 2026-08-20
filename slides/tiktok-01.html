@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme — TikTok 3:4 — Le bac, c'est dans longtemps</title>
+<link rel="stylesheet" href="euphemisme.css">
+<style>
+  .title {
+    position: absolute;
+    top: 212px; left: 76px; right: 60px;
+    font-size: 140px;
+    z-index: 25;
+  }
+  .title .star { color: var(--fox); font-size: .5em; vertical-align: .42em; }
+
+  /* ---- photo lycéens, plein bord droit ---- */
+  .photo.hero {
+    top: 646px;
+    right: -46px;
+    width: 640px;
+    height: 540px;
+    z-index: 10;
+    mask-image:
+      linear-gradient(to right, transparent 0, #000 260px),
+      linear-gradient(to bottom, transparent 0, #000 84px, #000 62%, transparent 100%);
+    mask-composite: intersect;
+  }
+  .photo.hero img { object-position: 62% 14%; }
+
+  /* ---- le conseil ---- */
+  .note {
+    position: absolute;
+    left: 76px; top: 722px;
+    width: 436px;
+    z-index: 30;
+  }
+  .note .punch {
+    font-size: 42px; font-weight: 900; line-height: 1.16;
+    color: var(--eel);
+    margin-bottom: 32px;
+  }
+  .note .punch .star { color: var(--fox); }
+  .note .smalltext { font-size: 32px; }
+
+  /* ---- signature discrète ---- */
+  .sign {
+    position: absolute;
+    left: 76px; bottom: 122px;
+    display: flex; align-items: center; gap: 24px;
+    z-index: 35;
+  }
+  .foxbadge {
+    width: 104px; height: 104px; flex: none;
+    border-radius: 50%;
+    background: var(--cream-hi);
+    border: 5px solid var(--fox);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 0 rgba(224,118,47,.22);
+    transform: rotate(-6deg);
+  }
+  .foxbadge svg { width: 76px; height: 76px; margin-top: 3px; }
+
+  .sign .url { font-size: 38px; font-weight: 900; color: var(--eel); line-height: 1.1; }
+  .sign .sub { font-size: 24px; font-weight: 700; color: var(--wolf);
+               letter-spacing: .02em; margin-top: 6px; }
+  .sign .sub b { color: var(--fox-dark); font-weight: 900; }
+</style>
+</head>
+<body>
+<div class="canvas">
+
+  <h1 class="title display">
+    Le bac,<br>
+    c'est dans<br>
+    <mark>longtemps</mark><span class="star">*</span>
+  </h1>
+
+  <div class="photo hero"><img src="../assets/photo-g.jpg" alt=""></div>
+
+  <div class="note">
+    <p class="punch"><span class="star">*</span>&nbsp;Enfin&nbsp;: dans 9&nbsp;mois.<br>C'est &ccedil;a, un euph&eacute;misme.</p>
+    <p class="smalltext"><strong>5&nbsp;min par jour</strong> d'ici juin,
+    &ccedil;a fait <strong>22&nbsp;h de r&eacute;visions</strong>. Sans t'en rendre compte.</p>
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge">
+      <svg viewBox="0 0 220 210" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 96 L27 20 Q29 9 39 15 L102 58 Z" fill="#E0762F"/>
+        <path d="M180 96 L193 20 Q191 9 181 15 L118 58 Z" fill="#E0762F"/>
+        <path d="M110 38 C168 38 188 80 188 114 C188 160 154 190 110 190
+                 C66 190 32 160 32 114 C32 80 52 38 110 38 Z" fill="#FF9857"/>
+        <path d="M110 116 C144 116 166 136 166 156 C166 178 141 192 110 192
+                 C79 192 54 178 54 156 C54 136 76 116 110 116 Z" fill="#FFF3E4"/>
+        <ellipse cx="80" cy="102" rx="11" ry="13" fill="#322D27"/>
+        <ellipse cx="140" cy="102" rx="11" ry="13" fill="#322D27"/>
+        <path d="M110 140 c13 0 20 6 20 13 c0 9 -10 15 -20 15 c-10 0 -20 -6 -20 -15
+                 c0 -7 7 -13 20 -13 Z" fill="#322D27"/>
+      </svg>
+    </div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme — Astuce 03</title>
+<link rel="stylesheet" href="euphemisme.css">
+<style>
+  .title {
+    position: absolute;
+    top: 268px; left: 76px; right: 60px;
+    font-size: 112px;
+    line-height: .95;
+    z-index: 25;
+  }
+
+  .photo.hero {
+    top: 640px; right: -46px;
+    width: 620px; height: 520px;
+    z-index: 10;
+    mask-image:
+      linear-gradient(to right, transparent 0, #000 250px),
+      linear-gradient(to bottom, transparent 0, #000 84px, #000 62%, transparent 100%);
+    mask-composite: intersect;
+  }
+  .photo.hero img { object-position: 46% 30%; }
+
+  .lead { position: absolute; left: 76px; top: 736px; width: 452px; z-index: 30; }
+  .feature { position: absolute; left: 76px; bottom: 168px; width: 452px; z-index: 30; }
+</style>
+</head>
+<body>
+<div class="canvas">
+
+  <div class="serie"><b>03</b> <span class="sep">&middot;</span> 4 astuces pour acc&eacute;l&eacute;rer tes r&eacute;visions</div>
+
+  <h1 class="title display">
+    L'oral se<br>
+    travaille<br>
+    <mark>tout haut</mark>
+  </h1>
+
+  <div class="photo hero"><img src="../assets/photo-e.jpg" alt=""></div>
+
+  <p class="lead">Relire ton explication lin&eacute;aire dans ta t&ecirc;te ne pr&eacute;pare pas
+  l'entretien. <strong>Dis-la debout, chronom&egrave;tre, recommence.</strong> Le jury &eacute;coute
+  une voix qui pense, pas une fiche r&eacute;cit&eacute;e.</p>
+
+  <p class="feature">Dans <b>Euph&eacute;misme</b>, l'entretien s'entra&icirc;ne toute
+  l'ann&eacute;e &mdash; pas la veille.</p>
+
+</div>
+</body>
+</html>

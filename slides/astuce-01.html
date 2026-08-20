@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme — Astuce 01</title>
+<link rel="stylesheet" href="euphemisme.css">
+<style>
+  .title {
+    position: absolute;
+    top: 268px; left: 76px; right: 60px;
+    font-size: 118px;
+    line-height: .95;
+    z-index: 25;
+  }
+
+  .photo.hero {
+    top: 636px; right: -46px;
+    width: 620px; height: 520px;
+    z-index: 10;
+    mask-image:
+      linear-gradient(to right, transparent 0, #000 250px),
+      linear-gradient(to bottom, transparent 0, #000 84px, #000 62%, transparent 100%);
+    mask-composite: intersect;
+  }
+  .photo.hero img { object-position: 62% 14%; }
+
+  .lead { position: absolute; left: 76px; top: 736px; width: 452px; z-index: 30; }
+  .feature { position: absolute; left: 76px; bottom: 168px; width: 452px; z-index: 30; }
+</style>
+</head>
+<body>
+<div class="canvas">
+
+  <div class="serie"><b>01</b> <span class="sep">&middot;</span> 4 astuces pour acc&eacute;l&eacute;rer tes r&eacute;visions</div>
+
+  <h1 class="title display">
+    Relire,<br>
+    c'est du<br>
+    <mark>temps perdu</mark>
+  </h1>
+
+  <div class="photo hero"><img src="../assets/photo-g.jpg" alt=""></div>
+
+  <p class="lead">Ton cerveau confond <strong>&laquo;&nbsp;je reconnais&nbsp;&raquo;</strong> et
+  <strong>&laquo;&nbsp;je sais&nbsp;&raquo;</strong>. Ferme le cours, prends une feuille blanche
+  et restitue de m&eacute;moire. C'est l'effort de rappel qui grave, pas la lecture.</p>
+
+  <p class="feature">Dans <b>Euph&eacute;misme</b>, tu ne relis jamais&nbsp;: 12&nbsp;types
+  d'exercices t'obligent &agrave; r&eacute;pondre.</p>
+
+</div>
+</body>
+</html>

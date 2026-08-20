@@ -1,0 +1,284 @@
+/* ===========================================================
+   EUPHÉMISME — système de design social (format TikTok 3:4)
+   1080 × 1440 · charte « orange unique »
+   =========================================================== */
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../assets/nunito-var.ttf') format('truetype');
+  font-weight: 200 1000;
+  font-style: normal;
+}
+
+:root {
+  /* marque */
+  --fox:        #FF9857;
+  --fox-dark:   #E0762F;
+  --fox-light:  #FFB584;
+  /* accents fonctionnels */
+  --bee:        #FFC15A;
+  --cardinal:   #F0798A;
+  /* neutres */
+  --polar:      #FAF6EF;
+  --eel:        #322D27;
+  --wolf:       #6F675C;
+  --cream-hi:   #FFFDF8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { width: 1080px; height: 1440px; overflow: hidden; }
+
+.canvas {
+  position: relative;
+  width: 1080px;
+  height: 1440px;
+  overflow: hidden;
+  font-family: 'Nunito', sans-serif;
+  color: var(--eel);
+  background:
+    radial-gradient(1200px 900px at 76% 8%,  rgba(255,181,132,.34), transparent 62%),
+    radial-gradient(900px 800px at 4% 96%,   rgba(255,193,90,.20),  transparent 60%),
+    var(--polar);
+}
+
+/* grain papier très léger */
+.canvas::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  background-image: radial-gradient(rgba(50,45,39,.055) 1px, transparent 1px);
+  background-size: 5px 5px;
+  opacity: .5;
+}
+
+/* ---------------- header / footer ---------------- */
+.header {
+  position: absolute;
+  top: 62px; left: 72px; right: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  z-index: 40;
+}
+.header .dot { color: var(--fox); }
+
+.footer {
+  position: absolute;
+  bottom: 60px; left: 72px; right: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--wolf);
+  z-index: 40;
+}
+.pagination { font-weight: 900; color: var(--eel); }
+.pagination span { color: var(--fox); }
+
+/* ---------------- typographie display ---------------- */
+.display {
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: .87;
+  letter-spacing: -.028em;
+  color: var(--eel);
+}
+/* surlignage abricot façon feutre */
+.display mark {
+  background: none;
+  color: inherit;
+  position: relative;
+  display: inline-block;
+}
+.display mark::after {
+  content: '';
+  position: absolute;
+  left: -6px; right: -6px; bottom: .085em;
+  height: .155em;
+  background: var(--fox);
+  border-radius: 6px;
+  z-index: -1;
+}
+.fox-txt { color: var(--fox-dark); }
+
+/* ---------------- photos (duotone abricot) ---------------- */
+/* aucune couleur froide ne survit : gris -> sépia -> abricot */
+.photo { position: absolute; overflow: hidden; }
+.photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1) sepia(.72) saturate(2.1) hue-rotate(-12deg)
+          contrast(1.06) brightness(1.03);
+}
+.photo::after {          /* voile abricot pour verrouiller la teinte */
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--fox);
+  mix-blend-mode: color;
+  opacity: .34;
+}
+
+/* ---------------- composants ---------------- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 30px;
+  border-radius: 999px;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  background: var(--cream-hi);
+  color: var(--eel);
+  border: 4px solid var(--eel);
+  border-bottom-width: 9px;
+}
+.pill.fox   { background: var(--fox);  border-color: var(--fox-dark);  color: #fff; }
+.pill.bee   { background: var(--bee);  border-color: #D99C28;          color: var(--eel); }
+.pill.solid { background: var(--eel);  border-color: #17140F;          color: var(--polar); }
+
+/* bouton 3D de l'app */
+.btn3d {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 42px 30px;
+  border-radius: 26px;
+  background: var(--fox);
+  border-bottom: 12px solid var(--fox-dark);
+  color: #fff;
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.smalltext {
+  font-size: 31px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--wolf);
+}
+.smalltext strong { font-weight: 900; color: var(--eel); }
+
+.kicker {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--fox-dark);
+}
+
+/* carte façon UI de l'app */
+.appcard {
+  background: var(--cream-hi);
+  border: 4px solid rgba(50,45,39,.12);
+  border-radius: 32px;
+  box-shadow: 0 14px 0 rgba(50,45,39,.10);
+  padding: 30px 34px;
+}
+
+/* ===========================================================
+   Carrousel « astuces » — composants partagés
+   =========================================================== */
+
+/* fil de série, une seule ligne en haut de chaque slide */
+.serie {
+  position: absolute;
+  top: 186px; left: 76px; right: 76px;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: .155em;
+  text-transform: uppercase;
+  color: var(--wolf);
+  z-index: 30;
+}
+.serie b { color: var(--fox-dark); font-weight: 900; }
+.serie .sep { color: var(--fox); }
+
+/* le conseil */
+.lead {
+  font-size: 32px;
+  line-height: 1.42;
+  font-weight: 600;
+  color: var(--wolf);
+}
+.lead strong { font-weight: 900; color: var(--eel); }
+
+/* la mention produit, discrète : filet abricot à gauche */
+.feature {
+  border-left: 7px solid var(--fox);
+  padding-left: 26px;
+  font-size: 25px;
+  line-height: 1.36;
+  font-weight: 700;
+  color: var(--wolf);
+}
+.feature b { color: var(--fox-dark); font-weight: 900; }
+
+/* badge renard */
+.foxbadge {
+  border-radius: 50%;
+  background: var(--cream-hi);
+  border: 5px solid var(--fox);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 0 rgba(224,118,47,.22);
+  flex: none;
+}
+
+/* ===========================================================
+   Signature discrète — présente dès la slide 1
+   =========================================================== */
+.sign { display: flex; align-items: center; gap: 22px; }
+.sign .foxbadge { width: 96px; height: 96px; }
+.sign .foxbadge svg { width: 70px; height: 70px; margin-top: 3px; }
+.sign .url { font-size: 34px; font-weight: 900; color: var(--eel); line-height: 1.1; }
+.sign .sub { font-size: 23px; font-weight: 700; color: var(--wolf); margin-top: 5px; }
+.sign .sub b { color: var(--fox-dark); font-weight: 900; }
+
+/* ---- règle en deux lignes (définition opposée) ---- */
+.rule-row {
+  display: flex; gap: 30px; align-items: baseline;
+  padding: 32px 0;
+  border-top: 3px solid rgba(50,45,39,.12);
+}
+.rule-row:last-child { border-bottom: 3px solid rgba(50,45,39,.12); }
+.rule-row .k {
+  width: 286px; flex: none;
+  font-size: 33px; font-weight: 900;
+  text-transform: uppercase; letter-spacing: .01em;
+  color: var(--fox-dark);
+}
+.rule-row .v { font-size: 33px; font-weight: 700; color: var(--wolf); }
+.rule-row .v b { font-weight: 900; color: var(--eel); }
+
+/* ---- carte exemple ---- */
+.chip {
+  display: inline-block;
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: var(--fox);
+  color: #fff;
+  font-size: 21px; font-weight: 900;
+  letter-spacing: .14em; text-transform: uppercase;
+}
+.quote {
+  font-size: 42px; font-weight: 900; line-height: 1.18;
+  color: var(--eel);
+  margin: 22px 0 10px;
+}
+.source { font-size: 23px; font-weight: 700; color: var(--wolf); margin-top: 6px; }
+.gloss  { font-size: 27px; font-weight: 600; line-height: 1.38; color: var(--wolf); margin-top: 18px; }
+.gloss b { font-weight: 900; color: var(--fox-dark); }

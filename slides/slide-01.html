@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>MEMORA — slide 01</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .title {
+    position: absolute;
+    top: 148px;
+    left: 64px;
+    font-size: 208px;
+    z-index: 10;
+  }
+  .title .l2 { display: block; }
+  .title .l3 { display: block; position: relative; }
+  /* soulignement accent sous OUBLIER */
+  .title .l3 em {
+    font-style: normal;
+    position: relative;
+    display: inline-block;
+  }
+  .title .l3 em::after {
+    content: '';
+    position: absolute;
+    left: 4px; right: 4px; bottom: 8px;
+    height: 16px;
+    background: var(--accent);
+    z-index: -1;
+  }
+
+  .photo.hero {
+    top: 348px;
+    right: -30px;
+    width: 560px;
+    height: 612px;
+    z-index: 20;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 70px);
+    mask-image: linear-gradient(to right, transparent 0, #000 70px);
+  }
+  .photo.hero img { object-position: 68% 10%; }
+
+  .note {
+    position: absolute;
+    left: 64px;
+    bottom: 150px;
+    width: 400px;
+    z-index: 25;
+  }
+  .note .star {
+    font-size: 44px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+
+  .swipe {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="header">
+    <div>Memora&reg;</div>
+    <div>&copy;2026</div>
+  </div>
+
+  <h1 class="title display">
+    Tu r&eacute;vises
+    <span class="l2">pour tout</span>
+    <span class="l3"><em>oublier</em>&thinsp;<span style="color:var(--accent)">*</span></span>
+  </h1>
+
+  <div class="photo hero">
+    <img src="../assets/photo-g.jpg" alt="">
+  </div>
+
+  <div class="note">
+    <div class="star">*</div>
+    <p class="smalltext"><strong>80&nbsp;% de ce que tu apprends s'efface en 48&nbsp;heures.</strong><br>
+    Ton cerveau n'est pas le probl&egrave;me. Ta m&eacute;thode, si.</p>
+  </div>
+
+  <div class="footer">
+    <div class="pagination">01<span>/</span>04</div>
+    <div class="swipe">Swipe <span style="font-size:34px; line-height:0;">&rarr;</span></div>
+  </div>
+</div>
+</body>
+</html>

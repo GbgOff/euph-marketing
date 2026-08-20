@@ -1,0 +1,11 @@
+# secrets — ne JAMAIS committer (le dépôt est public)
+.env
+*.token
+
+# brief stratégique — reste local, le dépôt Pages est public
+2026-08-20-brief-marketing-tiktok.md
+
+# système
+Thumbs.db
+desktop.ini
+.DS_Store
