@@ -17,7 +17,7 @@
 
 ## Hashtags
 
-#bac2026 #bacdefrancais #premiere #revisions #pourtoi #eaf #oraldefrancais #lycee
+#bac2026 #bacdefrancais #premiere #revisions #pourtoi #oraldefrancais #lycee
 
 ## Déclinaisons possibles (même gabarit, mêmes réglages)
 

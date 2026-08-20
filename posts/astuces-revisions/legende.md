@@ -26,7 +26,7 @@ qu'elle est la synthèse exacte des trois conseils précédents.
 
 ## Hashtags
 
-#bac2026 #bacdefrancais #premiere #revisions #methode #pourtoi #eaf #oraldefrancais #lycee
+#bac2026 #bacdefrancais #premiere #revisions #methode #pourtoi #oraldefrancais #lycee
 
 ## Réutiliser le gabarit
 

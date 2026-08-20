@@ -3,7 +3,7 @@
  * publish.js — envoie un carrousel dans la file d'attente Buffer.
  *
  *   node publish.js channels          liste les canaux connectés (pour BUFFER_CHANNEL_ID)
- *   node publish.js <slug>            publie le post déclaré dans posts.json
+ *   node publish.js <slug>            publie le post du dossier posts/<slug>/
  *   node publish.js <slug> --dry      montre ce qui serait envoyé, sans rien envoyer
  *
  * Buffer n'accepte pas d'upload de fichier : les PNG doivent déjà être en ligne
@@ -14,8 +14,9 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
-const OUTPUT = path.join(ROOT, 'output');
+const POSTS = path.join(ROOT, 'posts');
 const API = 'https://api.buffer.com';
+const readLines = (txt) => txt.split(String.fromCharCode(10)).map((l) => l.replace(/\r$/, ''));
 
 // ---------------------------------------------------------------- config
 
@@ -35,9 +36,11 @@ function need(name) {
   return v;
 }
 
+class Exit extends Error {}
+
 function die(msg) {
   console.error(`\n  ✗ ${msg}\n`);
-  process.exit(1);
+  throw new Exit(); // pas process.exit() : ça tue Node pendant un fetch en cours
 }
 
 // ---------------------------------------------------------------- légende
@@ -71,33 +74,60 @@ function buildCaption(mdPath) {
   return hashtags ? `${legende}\n\n${hashtags}` : legende;
 }
 
-// ---------------------------------------------------------------- slides
+// ---------------------------------------------------------------- posts
 
-function findSlides(prefix) {
-  const files = fs
-    .readdirSync(OUTPUT)
-    .filter((f) => f.startsWith(prefix) && f.endsWith('.png'))
-    .sort(); // 01, 02, 03… l'ordre du carrousel est l'ordre alphabétique
-  if (!files.length) die(`Aucun PNG "${prefix}*.png" dans output/. Lance ./render.sh d'abord.`);
-  if (files.length > 10) die(`${files.length} images — TikTok en accepte 10 au maximum.`);
-  return files;
+/** Un post = un sous-dossier de posts/. Pas de manifeste à tenir à jour. */
+function listPosts() {
+  if (!fs.existsSync(POSTS)) return [];
+  return fs
+    .readdirSync(POSTS, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .map((d) => {
+      const dir = path.join(POSTS, d.name);
+      const md = path.join(dir, 'legende.md');
+      const pngDir = path.join(dir, 'png');
+      const slides = fs.existsSync(pngDir)
+        ? fs.readdirSync(pngDir).filter((f) => f.endsWith('.png')).sort()
+        : [];
+      let titre = d.name;
+      if (fs.existsSync(md)) {
+        const h1 = readLines(fs.readFileSync(md, 'utf8')).find((l) => l.startsWith('# '));
+        if (h1) titre = h1.replace(/^#\s*/, '').replace(/^[^—]*—\s*/, '');
+      }
+      return { slug: d.name, dir, md, titre, slides, pret: slides.length > 0 && fs.existsSync(md) };
+    })
+    .sort((a, b) => a.slug.localeCompare(b.slug));
 }
 
-/** Buffer va chercher l'image lui-même : si l'URL n'est pas publique, le post échoue. */
-async function checkReachable(urls) {
+/**
+ * Buffer récupère l'image au moment où le post part, parfois des jours plus tard.
+ * On vérifie donc non seulement qu'elle est publique, mais qu'elle est bien la
+ * version locale — sinon on programmerait un post pointant vers une vieille image.
+ */
+async function checkFresh(pairs) {
+  const crypto = require('crypto');
   const bad = [];
-  for (const url of urls) {
+  for (const { file, url } of pairs) {
+    const local = crypto.createHash('md5').update(fs.readFileSync(file)).digest('hex');
     try {
-      const res = await fetch(url, { method: 'HEAD', redirect: 'follow' });
-      const type = res.headers.get('content-type') || '';
-      if (!res.ok) bad.push(`${url} → HTTP ${res.status}`);
-      else if (!type.startsWith('image/')) bad.push(`${url} → content-type "${type}"`);
+      const res = await fetch(url, { redirect: 'follow' });
+      if (!res.ok) {
+        bad.push(`${path.basename(file)} → HTTP ${res.status} (pas encore en ligne ?)`);
+        continue;
+      }
+      const remote = crypto
+        .createHash('md5')
+        .update(Buffer.from(await res.arrayBuffer()))
+        .digest('hex');
+      if (remote !== local) bad.push(`${path.basename(file)} → en ligne mais périmée (commit non poussé ?)`);
     } catch (e) {
-      bad.push(`${url} → injoignable (${e.message})`);
+      bad.push(`${path.basename(file)} → injoignable (${e.message})`);
     }
   }
   return bad;
 }
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // ---------------------------------------------------------------- API
 
@@ -124,8 +154,22 @@ async function graphql(query, variables) {
   return json.data;
 }
 
+/** channels() exige l'organizationId — on le résout depuis le compte. */
+async function organizationId() {
+  if (process.env.BUFFER_ORG_ID) return process.env.BUFFER_ORG_ID;
+  const data = await graphql(`query { account { organizations { id name } } }`);
+  const orgs = data.account?.organizations || [];
+  if (!orgs.length) die('Aucune organisation sur ce compte Buffer.');
+  return orgs[0].id;
+}
+
 async function listChannels() {
-  const data = await graphql(`query { channels { id name service } }`);
+  const data = await graphql(
+    `query Channels($input: ChannelsInput!) {
+       channels(input: $input) { id name service }
+     }`,
+    { input: { organizationId: await organizationId() } }
+  );
   const channels = data.channels || [];
   if (!channels.length) die('Aucun canal connecté sur ce compte Buffer.');
   console.log('\n  Canaux connectés :\n');
@@ -136,34 +180,53 @@ async function listChannels() {
   console.log('  Copie l\'id du canal TikTok dans BUFFER_CHANNEL_ID (.env).\n');
 }
 
-async function publish(slug, dry) {
-  const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'posts.json'), 'utf8'));
-  const post = manifest[slug];
+async function publish(slug, dry, wait) {
+  const posts = listPosts();
+  const post = posts.find((p) => p.slug === slug);
   if (!post) {
-    die(`Slug "${slug}" inconnu. Disponibles : ${Object.keys(manifest).join(', ')}`);
+    die(`Post "${slug}" introuvable. Dossiers : ${posts.map((p) => p.slug).join(', ')}`);
   }
+  if (!post.slides.length) {
+    die(`posts/${slug}/png/ est vide — c'est encore une idée. Lance d'abord : sh render.sh ${slug}`);
+  }
+  if (post.slides.length > 10) {
+    die(`${post.slides.length} images — TikTok en accepte 10 au maximum.`);
+  }
+  if (!fs.existsSync(post.md)) die(`posts/${slug}/legende.md manquant.`);
 
   const base = need('PAGES_BASE_URL').replace(/\/+$/, '');
-  const slides = findSlides(post.slides);
-  const urls = slides.map((f) => `${base}/output/${f}`);
-  const text = buildCaption(path.join(OUTPUT, post.caption));
+  const urls = post.slides.map((f) => `${base}/posts/${slug}/png/${f}`);
+  const text = buildCaption(post.md);
 
-  console.log(`\n  ${post.titre}`);
-  console.log(`  ${slides.length} slides :`);
+  console.log(`\n  ${post.titre || slug}`);
+  console.log(`  ${post.slides.length} slides :`);
   urls.forEach((u, i) => console.log(`    ${String(i + 1).padStart(2, '0')}. ${u}`));
   console.log(`\n  Légende (${text.length} caractères) :\n`);
-  console.log(text.split('\n').map((l) => `    │ ${l}`).join('\n'));
+  console.log(readLines(text).map((l) => `    │ ${l}`).join('\n'));
 
-  console.log('\n  Vérification que les images sont publiques…');
-  const bad = await checkReachable(urls);
+  const pairs = post.slides.map((f, i) => ({
+    file: path.join(post.dir, 'png', f),
+    url: urls[i],
+  }));
+  const deadline = Date.now() + (wait ? 5 * 60_000 : 0);
+  let bad;
+  process.stdout.write('\n  Vérification des images en ligne…');
+  for (;;) {
+    bad = await checkFresh(pairs);
+    if (!bad.length || Date.now() > deadline) break;
+    process.stdout.write(' GitHub Pages reconstruit, on patiente…');
+    await sleep(15_000);
+  }
   if (bad.length) {
     die(
-      'Ces images ne sont pas accessibles publiquement — Buffer ne pourra pas les récupérer :\n' +
+      'Buffer ne pourra pas récupérer ces images :\n' +
         bad.map((b) => `      ${b}`).join('\n') +
-        '\n\n    Vérifie que le commit est poussé et que GitHub Pages est activé.'
+        (wait
+          ? "\n\n    Abandon après 5 min. Vérifie que GitHub Pages est activé sur le dépôt."
+          : "\n\n    Pousse le commit, puis relance (ou utilise --wait pour attendre Pages).")
     );
   }
-  console.log('  ✓ toutes les images répondent\n');
+  console.log('\n  ✓ les images en ligne sont bien les versions locales\n');
 
   if (dry) {
     console.log('  --dry : rien n\'a été envoyé à Buffer.\n');
@@ -206,15 +269,28 @@ async function publish(slug, dry) {
   const cmd = args.find((a) => !a.startsWith('--'));
 
   if (!cmd) {
-    const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'posts.json'), 'utf8'));
-    console.log('\n  node publish.js channels        liste les canaux Buffer');
-    console.log('  node publish.js <slug> [--dry]  envoie un post dans la file\n');
-    console.log('  Posts déclarés :');
-    for (const [k, v] of Object.entries(manifest)) console.log(`    ${k.padEnd(10)} ${v.titre}`);
+    console.log('\n  sh go.sh <slug>                          tout : rend, pousse, envoie');
+    console.log('  sh render.sh [slug]                      rend les PNG seulement');
+    console.log('  node publish.js channels                 liste les canaux Buffer');
+    console.log('  node publish.js <slug> [--dry] [--wait]  envoie seulement\n');
+    const posts = listPosts();
+    const w = Math.max(...posts.map((p) => p.slug.length));
+    console.log('  Prêts :');
+    for (const p of posts.filter((p) => p.pret)) {
+      console.log(`    ${p.slug.padEnd(w)}  ${String(p.slides.length).padStart(2)} slides   ${p.titre}`);
+    }
+    const idees = posts.filter((p) => !p.pret);
+    if (idees.length) {
+      console.log('\n  Idées (pas encore de slides) :');
+      for (const p of idees) console.log(`    ${p.slug.padEnd(w)}            ${p.titre}`);
+    }
     console.log('');
     return;
   }
 
   if (cmd === 'channels') await listChannels();
-  else await publish(cmd, dry);
-})().catch((e) => die(e.stack || e.message));
+  else await publish(cmd, dry, args.includes('--wait'));
+})().catch((e) => {
+  if (!(e instanceof Exit)) console.error(`\n  ✗ ${e.stack || e.message}\n`);
+  process.exitCode = 1;
+});

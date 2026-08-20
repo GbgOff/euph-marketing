@@ -22,6 +22,8 @@ lecteur n'installe jamais l'app.
 - La dernière slide reste une slide de contenu (quiz, chute, récap) qui porte le CTA — pas une
   bannière publicitaire collée à la fin.
 - Interdits : promesse de note, dénigrement des profs, affiliation Duolingo, faute de français.
+- **Ne jamais inventer une citation** tirée des 12 œuvres au programme. Si elle n'est pas
+  vérifiable, prendre un exemple canonique correctement attribué, ou pas d'exemple du tout.
 
 ## Règles de composition
 
@@ -31,9 +33,9 @@ lecteur n'installe jamais l'app.
   (`01 · 4 ASTUCES POUR…`) — c'est du contenu, pas de la décoration.
 - **CTA discret** : `euphemisme.fr` en texte, pas de gros bouton criard.
 - **Photos : optionnelles et non systématiques.** C'est un choix de composition, slide par slide —
-  alterner photo / schéma / carte produit pour qu'une série ne se répète pas. Les photos de
-  `assets/` ne sont pas obligatoires ; on peut en chercher une sur le web (source libre de droits
-  type Unsplash/Pexels, à enregistrer dans `assets/`).
+  alterner photo / schéma / carte produit pour qu'une série ne se répète pas. `assets/` ne contient
+  que les deux photos réellement utilisées ; pour une nouvelle, prendre une image libre de droits
+  (Unsplash/Pexels) et l'enregistrer dans `assets/`.
 - Toute photo passe par le **duotone abricot** de `.photo` (grayscale → sépia → voile
   `mix-blend-mode: color`) : c'est ce qui interdit au vert et aux gris froids d'entrer, et ce qui
   soude n'importe quelle image à la charte.
@@ -41,49 +43,93 @@ lecteur n'installe jamais l'app.
 ## Direction artistique
 
 Mélange assumé de deux références :
-- **éditorial** (cf. `output/slide-*.png`, ancienne série MEMORA) : titre display géant sur 3
-  lignes en haut, photo qui saigne au bord, blocs de texte étroits, grain papier ;
+- **éditorial** : titre display géant sur 2–3 lignes en haut, photo qui saigne au bord, blocs de
+  texte étroits, grain papier ;
 - **charte de l'app** : orange unique `#FF9857` sur fond crème `#FAF6EF`, Nunito 700–900, coins
   très arrondis, bordures basses épaisses, **aucun vert ni teal, aucune palette froide**.
 
-## Technique
+Contrainte typographique : **interlignage des titres `.95` par défaut, `1.06` dès qu'une capitale
+accentuée (É, À, Ç) est empilée sur une autre ligne** — sinon l'accent ou la cédille touche la
+ligne voisine. Toujours vérifier le PNG rendu, pas seulement le HTML.
 
-- Un post = un ou plusieurs HTML autonomes dans `slides/`, tout le style dans
-  `slides/euphemisme.css` (`euphemisme.css` = système 3:4 actuel ; `styles.css` = ancien système
-  1:1 MEMORA, ne pas y toucher).
-- Canvas **1080 × 1440 px** (3:4). Nunito est embarquée en local (`assets/nunito-var.ttf`).
-- **Interlignage des titres** : `.95` par défaut, mais `1.06` dès qu'une capitale accentuée
-  (É, À, Ç) est empilée sur une autre ligne — sinon l'accent ou la cédille touche la ligne
-  voisine. Toujours vérifier le rendu, pas seulement le HTML.
-- Rendu : `./render.sh` → PNG dans `output/`. (Chrome headless, chemin de sortie en absolu Windows.)
-- Chaque post s'accompagne d'un `.md` dans `output/` : légende, hashtags, angle, plan de la série.
-- Nouvelle astuce : dupliquer `astuce-01.html` (mise en page photo) ou `astuce-02.html`
-  (mise en page schéma).
+---
 
-## Publication (Buffer)
+# Comment ça marche
 
-Chaîne complète : `slides/*.html` → `render.sh` → `output/*.png` → GitHub Pages → `publish.js` →
-file d'attente Buffer.
+## La chaîne complète
 
-- **API Buffer** : GraphQL sur `https://api.buffer.com`, clé personnelle en
-  `Authorization: Bearer`. Dispo sur tous les plans, gratuit inclus.
+```
+posts/<slug>/01.html  ──render.sh──>  posts/<slug>/png/*.png  ──git push──>  GitHub Pages
+                                                                                  |
+             posts/<slug>/legende.md ──┐                                          | URL publiques
+                                       v                                          v
+                                 publish.js  ──────────────────>  file d'attente Buffer
+                                                                                  |
+                                                                                  v
+                                                                    TikTok (@euphemisme.fr)
+```
+
+**Une seule commande fait tout :**
+
+```
+sh go.sh figure-litote
+```
+
+1. rend les HTML du post en PNG 1080×1440,
+2. commite et pousse sur GitHub Pages,
+3. attend que Pages ait reconstruit, vérifie les images, crée le post dans Buffer.
+
+Buffer place le post au prochain créneau de ton planning ; **rien n'est publié sans que tu l'aies
+relu dans Buffer**.
+
+## Les pièces
+
+| Chemin | Rôle |
+|---|---|
+| `posts/<slug>/01.html`, `02.html`… | une slide = un HTML autonome |
+| `posts/<slug>/legende.md` | angle, plan des slides, légende, hashtags |
+| `posts/<slug>/png/` | les PNG rendus, générés |
+| `design/euphemisme.css` | tout le système de design (couleurs, composants, duotone) |
+| `assets/` | Nunito + les seules photos réellement utilisées |
+| `render.sh [slug]` | Chrome headless → `posts/*/png/*.png` en 1080×1440 |
+| `publish.js` | vérifie les images puis crée le post via l'API Buffer |
+| `go.sh <slug>` | enchaîne les trois étapes |
+| `.env` | les 3 clés — **jamais committé** |
+
+**Un post = un dossier.** Il n'y a aucun manifeste à tenir à jour : `publish.js` découvre les posts
+en listant `posts/`, et prend le titre dans le `# ` de `legende.md`. Un dossier sans `png/` est
+affiché comme une **idée** ; le script refuse de le publier.
+
+## Créer un nouveau post
+
+1. `mkdir posts/<slug>` et y écrire `legende.md` (angle, plan des slides).
+2. Copier des HTML existants selon la mise en page voulue :
+   `astuces-revisions/01.html` (photo à droite) · `astuces-revisions/02.html` (schéma) ·
+   `figure-litote/01.html` (typo seule) · `astuces-revisions/04.html` (carte produit).
+   Depuis `posts/<slug>/`, les chemins sont `../../design/euphemisme.css` et `../../assets/`.
+3. Changer le fil de série, le titre, `.lead`, `.feature`.
+4. Compléter dans `legende.md` les sections `## Légende` et `## Hashtags` — c'est exactement ce
+   que `publish.js` enverra à Buffer.
+5. `sh go.sh <slug>`.
+
+## L'API Buffer — ce qu'il faut savoir
+
+- GraphQL sur `https://api.buffer.com`, clé personnelle en `Authorization: Bearer`.
+  Disponible sur tous les plans, gratuit inclus.
   ⚠️ L'ancienne API REST est **retirée le 1er février 2027** — ne jamais suivre un tuto legacy.
-- **Buffer n'accepte pas d'upload de fichier.** Les PNG doivent être servis en HTTPS public,
-  en lien direct, et **rester joignables jusqu'à la publication** (Buffer les récupère au moment
-  où le post part, parfois des jours plus tard). D'où GitHub Pages plutôt qu'une URL signée.
+- **Buffer n'accepte pas d'upload de fichier.** Les PNG doivent être servis en HTTPS public, en
+  lien direct, et **rester joignables jusqu'à la publication** (Buffer les récupère au moment où
+  le post part, parfois des jours plus tard). D'où GitHub Pages plutôt qu'une URL signée.
 - `assets` est une **liste ordonnée** → l'ordre du carrousel = l'ordre alphabétique des fichiers
-  (`figure-01`, `-02`, `-03`). TikTok accepte **10 images maximum**.
-- Un post se déclare dans `posts.json` : préfixe des slides + fichier de légende. La légende
-  envoyée est la section `## Légende` du `.md`, suivie de la section `## Hashtags`.
+  (`01.png`, `02.png`, `03.png`). TikTok accepte **10 images maximum**.
+- La requête `channels` exige un `organizationId` que la doc publique n'indique pas dans son
+  exemple. `publish.js` le résout tout seul via `account { organizations }`.
+- `publish.js` compare l'empreinte MD5 de chaque image locale à celle servie en ligne. Il refuse
+  d'envoyer si elles diffèrent — sinon on programmerait un post pointant vers une vieille image,
+  et l'erreur n'apparaîtrait que des jours plus tard, au moment de la publication.
 
-```
-node publish.js channels        # récupérer BUFFER_CHANNEL_ID
-node publish.js figure --dry    # vérifie images + légende, n'envoie rien
-node publish.js figure          # ajoute à la file Buffer
-```
+## Secrets
 
-- **Secrets** : `.env` (jamais committé, voir `.env.example`). Le dépôt étant public,
-  `.gitignore` exclut aussi le brief marketing. Vérifier `git check-ignore -v .env` après toute
-  modification du `.gitignore`.
-- `publish.js` fait un HEAD sur chaque image avant d'envoyer : si une URL n'est pas publique,
-  il refuse plutôt que de créer un post qui échouera silencieusement chez Buffer.
+`.env` contient `BUFFER_TOKEN`, `BUFFER_CHANNEL_ID`, `PAGES_BASE_URL` (modèle dans
+`.env.example`). Le dépôt GitHub étant **public**, `.gitignore` exclut `.env` et le brief
+marketing. Après toute modification du `.gitignore` : `git check-ignore -v .env`.

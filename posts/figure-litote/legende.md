@@ -36,7 +36,7 @@ récompensent ceux qui restent. L'app est visible dès la première image, jamai
 
 ## Hashtags
 
-#figuresdestyle #bacdefrancais #bac2026 #premiere #litterature #pourtoi #eaf #corneille
+#figuresdestyle #bacdefrancais #bac2026 #premiere #litterature #pourtoi #corneille
 
 ## Déclinaisons
 
