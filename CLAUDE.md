@@ -101,6 +101,7 @@ relu dans Buffer**.
 | `render.sh [slug]` | Chrome headless → `posts/*/png/*.png` en 1080×1440 |
 | `publish.js` | vérifie les images puis crée le post via l'API Buffer |
 | `go.sh <slug>` | enchaîne les trois étapes |
+| `tiktok.js <slug>` | prépare un dépôt manuel dans TikTok Studio (légende + images) |
 | `.env` | les 3 clés — **jamais committé** |
 
 **Un post = un dossier.** Il n'y a aucun manifeste à tenir à jour : `publish.js` découvre les posts
@@ -134,6 +135,23 @@ affiché comme une **idée** ; le script refuse de le publier.
 - `publish.js` compare l'empreinte MD5 de chaque image locale à celle servie en ligne. Il refuse
   d'envoyer si elles diffèrent — sinon on programmerait un post pointant vers une vieille image,
   et l'erreur n'apparaîtrait que des jours plus tard, au moment de la publication.
+
+## Deux voies de publication
+
+**Automatique (Buffer)** — `sh go.sh <slug>`. Buffer publie seul au créneau. **Sans son** :
+l'API TikTok n'expose aucun champ audio (`TikTokPostMetadataInput` = `title` + `isAiGenerated`),
+et Buffer n'a pas accès à la bibliothèque musicale. Pas non plus de dépôt dans les brouillons
+TikTok : ça n'existe ni côté Buffer ni côté API.
+
+**Manuelle avec son** — `node tiktok.js <slug>`. Met la légende dans le presse-papier
+(via `Set-Clipboard`, qui préserve l'UTF-8 — pas `clip.exe`) et ouvre `posts/<slug>/png/`.
+Il ne reste qu'à glisser les images dans TikTok Studio, coller, choisir le son, programmer.
+TikTok Studio programme jusqu'à **10 jours** à l'avance et ne permet aucune modification
+après coup.
+
+`publish.js` accepte aussi `--draft` (brouillon Buffer, rien de programmé) et `--notify`
+(Buffer notifie au créneau, on finit dans TikTok). `--notify` n'arrive qu'à l'heure du
+créneau et impose de recopier la légende : `tiktok.js` est plus direct.
 
 ## Secrets
 

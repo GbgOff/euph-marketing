@@ -5,6 +5,8 @@
  *   node publish.js channels          liste les canaux connectés (pour BUFFER_CHANNEL_ID)
  *   node publish.js <slug>            publie le post du dossier posts/<slug>/
  *   node publish.js <slug> --dry      montre ce qui serait envoyé, sans rien envoyer
+ *   node publish.js <slug> --draft    enregistre en brouillon au lieu de programmer
+ *   node publish.js <slug> --notify   « Notify Me » : tu finis dans TikTok (son possible)
  *
  * Buffer n'accepte pas d'upload de fichier : les PNG doivent déjà être en ligne
  * (GitHub Pages) et le rester jusqu'à la publication. Le script le vérifie.
@@ -180,7 +182,8 @@ async function listChannels() {
   console.log('  Copie l\'id du canal TikTok dans BUFFER_CHANNEL_ID (.env).\n');
 }
 
-async function publish(slug, dry, wait) {
+async function publish(slug, opts) {
+  const { dry, wait, notify, draft } = opts;
   const posts = listPosts();
   const post = posts.find((p) => p.slug === slug);
   if (!post) {
@@ -233,34 +236,53 @@ async function publish(slug, dry, wait) {
     return;
   }
 
+  const input = {
+    text,
+    channelId: need('BUFFER_CHANNEL_ID'),
+    // 'notification' = Buffer te prévient sur ton téléphone et tu finis dans TikTok.
+    // C'est le seul moyen d'ajouter un son : l'API TikTok n'expose aucun champ audio.
+    schedulingType: notify ? 'notification' : 'automatic',
+    mode: 'addToQueue',
+    saveToDraft: !!draft,
+    assets: urls.map((url) => ({ image: { url } })),
+  };
+
   const data = await graphql(
     `mutation CreatePost($input: CreatePostInput!) {
        createPost(input: $input) {
          __typename
-         ... on PostActionSuccess { post { id text dueAt } }
+         ... on PostActionSuccess { post { id text dueAt status } }
        }
      }`,
-    {
-      input: {
-        text,
-        channelId: need('BUFFER_CHANNEL_ID'),
-        schedulingType: 'automatic',
-        mode: 'addToQueue',
-        assets: urls.map((url) => ({ image: { url } })),
-      },
-    }
+    { input }
   );
 
   const result = data.createPost;
   if (result.__typename !== 'PostActionSuccess') {
     die(`Buffer a répondu "${result.__typename}" :\n${JSON.stringify(result, null, 2)}`);
   }
-  console.log(`  ✓ ajouté à la file Buffer — post ${result.post.id}`);
-  console.log(`    publication prévue : ${result.post.dueAt || 'prochain créneau du planning'}`);
-  console.log('    relis-le dans Buffer avant qu\'il parte.\n');
+
+  const p = result.post;
+  if (draft) {
+    console.log(`  ✓ enregistré en brouillon — post ${p.id}`);
+    console.log('    rien ne partira tant que tu ne l\'auras pas programmé dans Buffer.\n');
+  } else if (notify) {
+    console.log(`  ✓ programmé en « Notify Me » — post ${p.id}`);
+    console.log(`    ${p.dueAt || 'prochain créneau du planning'}`);
+    console.log('    Buffer te notifiera : tu ajoutes le son dans TikTok et tu publies.');
+    console.log('    Si tu rates la notification, rien n\'est publié.\n');
+  } else {
+    console.log(`  ✓ ajouté à la file Buffer — post ${p.id}`);
+    console.log(`    publication prévue : ${p.dueAt || 'prochain créneau du planning'}`);
+    console.log('    relis-le dans Buffer avant qu\'il parte.\n');
+  }
 }
 
 // ---------------------------------------------------------------- main
+
+module.exports = { listPosts, buildCaption, readLines };
+
+if (require.main !== module) return;
 
 (async () => {
   loadEnv();
@@ -272,7 +294,9 @@ async function publish(slug, dry, wait) {
     console.log('\n  sh go.sh <slug>                          tout : rend, pousse, envoie');
     console.log('  sh render.sh [slug]                      rend les PNG seulement');
     console.log('  node publish.js channels                 liste les canaux Buffer');
-    console.log('  node publish.js <slug> [--dry] [--wait]  envoie seulement\n');
+    console.log('  node publish.js <slug> [--dry] [--wait]  envoie seulement');
+    console.log('        --draft   enregistre en brouillon, ne programme rien');
+    console.log('        --notify  Notify Me : tu ajoutes le son dans TikTok\n');
     const posts = listPosts();
     const w = Math.max(...posts.map((p) => p.slug.length));
     console.log('  Prêts :');
@@ -289,7 +313,13 @@ async function publish(slug, dry, wait) {
   }
 
   if (cmd === 'channels') await listChannels();
-  else await publish(cmd, dry, args.includes('--wait'));
+  else
+    await publish(cmd, {
+      dry,
+      wait: args.includes('--wait'),
+      notify: args.includes('--notify'),
+      draft: args.includes('--draft'),
+    });
 })().catch((e) => {
   if (!(e instanceof Exit)) console.error(`\n  ✗ ${e.stack || e.message}\n`);
   process.exitCode = 1;
