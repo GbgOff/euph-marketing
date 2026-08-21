@@ -22,3 +22,6 @@ for dir in "$ROOT"/posts/*/; do
     else echo "    ECHEC $name.png"; fi
   done
 done
+
+echo "  descriptions"
+node "$ROOT/descriptions.js"

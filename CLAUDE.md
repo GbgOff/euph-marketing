@@ -96,12 +96,13 @@ relu dans Buffer**.
 | `posts/<slug>/01.html`, `02.html`… | une slide = un HTML autonome |
 | `posts/<slug>/legende.md` | angle, plan des slides, légende, hashtags |
 | `posts/<slug>/png/` | les PNG rendus, générés |
+| `posts/<slug>/description.txt` | le texte à coller dans TikTok, généré |
 | `design/euphemisme.css` | tout le système de design (couleurs, composants, duotone) |
 | `assets/` | Nunito + les seules photos réellement utilisées |
 | `render.sh [slug]` | Chrome headless → `posts/*/png/*.png` en 1080×1440 |
 | `publish.js` | vérifie les images puis crée le post via l'API Buffer |
 | `go.sh <slug>` | enchaîne les trois étapes |
-| `tiktok.js <slug>` | prépare un dépôt manuel dans TikTok Studio (légende + images) |
+| `descriptions.js` | écrit `posts/*/description.txt` (appelé par `render.sh`) |
 | `.env` | les 3 clés — **jamais committé** |
 
 **Un post = un dossier.** Il n'y a aucun manifeste à tenir à jour : `publish.js` découvre les posts
@@ -143,15 +144,20 @@ l'API TikTok n'expose aucun champ audio (`TikTokPostMetadataInput` = `title` + `
 et Buffer n'a pas accès à la bibliothèque musicale. Pas non plus de dépôt dans les brouillons
 TikTok : ça n'existe ni côté Buffer ni côté API.
 
-**Manuelle avec son** — `node tiktok.js <slug>`. Met la légende dans le presse-papier
-(via `Set-Clipboard`, qui préserve l'UTF-8 — pas `clip.exe`) et ouvre `posts/<slug>/png/`.
-Il ne reste qu'à glisser les images dans TikTok Studio, coller, choisir le son, programmer.
-TikTok Studio programme jusqu'à **10 jours** à l'avance et ne permet aucune modification
-après coup.
+**Manuelle avec son** — depuis le téléphone, via GitHub Pages :
+
+```
+https://GbgOff.github.io/euph-marketing/posts/<slug>/png/01.png
+https://GbgOff.github.io/euph-marketing/posts/<slug>/description.txt
+```
+
+Appui long sur chaque image pour l'enregistrer dans la pellicule, puis copier la
+description. Dans TikTok, les images se sélectionnent dans l'ordre, le son se choisit
+normalement. `description.txt` est régénéré par `render.sh` : ne jamais l'éditer à la
+main, la source est la section `## Légende` du `legende.md`.
 
 `publish.js` accepte aussi `--draft` (brouillon Buffer, rien de programmé) et `--notify`
-(Buffer notifie au créneau, on finit dans TikTok). `--notify` n'arrive qu'à l'heure du
-créneau et impose de recopier la légende : `tiktok.js` est plus direct.
+(Buffer notifie au créneau, on finit dans TikTok).
 
 ## Secrets
 
