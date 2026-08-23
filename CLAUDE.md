@@ -2,10 +2,26 @@
 
 ## Objectif
 
-Produire des visuels promotionnels pour **Euphémisme** (PWA gratuite de révision du bac de
-français, 1re générale) destinés à **TikTok** (déclinables Insta/stories). Le brief de référence
-complet — app, cible, charte, features, œuvres au programme, leviers — est dans
-`2026-08-20-brief-marketing-tiktok.md` : **le lire avant toute production**.
+Le compte TikTok est **un compte de conseils pour le bac de français**, qui fait aussi la
+promotion d'**Euphémisme** (PWA gratuite de révision, 1re générale). Dans cet ordre, et jamais
+l'inverse.
+
+C'est une stratégie, pas de la modestie : **rien ne devient viral parce que c'est une pub.** Ce
+qui tourne, c'est le conseil qu'on a envie d'envoyer à quelqu'un de sa classe. L'app profite de
+l'audience que le conseil a créée — elle ne la crée pas. Un post qui ne servirait à rien sans
+l'app est un post raté, même s'il est joli.
+
+Donc, dans l'ordre, pour chaque post :
+
+1. **Est-ce un vrai conseil ?** Quelque chose qu'un élève de 1re ne sait pas et peut appliquer
+   dès ce soir. Si la réponse est non, on ne le produit pas.
+2. **Est-ce que ça peut tourner ?** Une accroche qui pose un problème que la cible reconnaît, un
+   contenu qui se lit en 8 secondes par slide, une chute qui donne envie de commenter.
+3. **Est-ce que l'app y trouve sa place ?** Discrètement, à sa place, sans jamais prendre celle
+   du conseil.
+
+Le brief de référence complet — app, cible, charte, features, œuvres au programme, leviers — est
+dans `2026-08-20-brief-marketing-tiktok.md` : **le lire avant toute production**.
 
 ## Le principe directeur
 
@@ -32,9 +48,34 @@ lecteur n'installe jamais l'app.
 - **Ne jamais inventer une citation** tirée des 12 œuvres au programme. Si elle n'est pas
   vérifiable, prendre un exemple canonique correctement attribué, ou pas d'exemple du tout.
 
+## Ce que doit contenir une slide
+
+Une slide qui ne porte qu'une phrase et du vide se fait passer. **Chaque slide doit livrer une
+chose que le lecteur ne savait pas** — sinon elle ne mérite pas d'être swipée.
+
+Le gabarit d'une slide de conseil :
+
+| | |
+|---|---|
+| **le titre** | le conseil en 2–4 mots, en display |
+| **la raison** | `.lead`, 2 lignes : *pourquoi* ça marche. C'est ce qui distingue un conseil d'un slogan |
+| **la preuve** | un exemple, un avant/après, une liste d'étapes, un mini-tableau, un chiffre — **du concret, pas une reformulation** |
+| **la mention produit** | une ligne `.feature`, ou rien |
+
+C'est la **preuve** qui manque le plus souvent. Un « relève les champs lexicaux » sans un relevé
+montré n'apprend rien ; les deux blocs `.compare` (ko / ok) sur une même phrase, si.
+
+- **Viser 6 à 9 lignes de texte utile par slide.** En dessous, la slide est creuse. Au-dessus, on
+  ne la lit plus en 8 secondes.
+- Pas de zone morte de plus de ~200 px entre deux blocs : c'est le signe qu'il manque un exemple.
+- L'air se met **autour** des blocs et dans les marges, pas au milieu de la slide.
+- Un mot difficile qui apparaît (litote, anaphore, registre) se glose en une incise. On écrit pour
+  quelqu'un qui n'a pas encore compris le cours.
+
 ## Règles de composition
 
-- **Peu d'éléments, beaucoup d'air.** Chaque élément doit se justifier.
+- **Peu d'éléments, beaucoup d'air** — mais chaque élément présent doit être plein. Peu de blocs
+  bien remplis, pas beaucoup de blocs vides.
 - **Pas de chrome de marque** : ni logo en coin, ni `©2026`, ni `®`, ni pagination `01/04`, ni
   « swipe », ni bandeau de saison. La numérotation d'une série passe par un fil de contenu en haut
   (`01 · 4 ASTUCES POUR…`) — c'est du contenu, pas de la décoration.
@@ -70,15 +111,26 @@ moyen d'ajouter un son.
 ## La chaîne complète
 
 ```
-posts/<slug>/html/01.html  ──render.sh──>  posts/<slug>/01.png
-posts/<slug>/legende.md    ──render.sh──>  posts/<slug>/description.txt
+posts/<slug>/html/01.html  ──>  posts/<slug>/01.png          1080 × 1440
+posts/<slug>/legende.md    ──>  posts/<slug>/description.txt
 ```
 
-Une seule commande :
+**Le rendu est automatique.** Le hook `PostToolUse` de `.claude/settings.json` lance
+`.claude/hooks/auto-render.js` à chaque écriture :
+
+| fichier modifié | ce qui est refait |
+|---|---|
+| `posts/<slug>/html/02.html` | `posts/<slug>/02.png` |
+| `posts/<slug>/legende.md` | `posts/<slug>/description.txt` |
+| `design/*.css`, `design/*.js` | **toutes** les slides du dépôt |
+
+Il n'y a donc jamais de PNG en retard sur sa source, et il n'y a rien à lancer à la main. À la
+main quand même, si besoin :
 
 ```
-sh render.sh figure-litote      un post
-sh render.sh                    tous les posts
+node render.js                    tous les posts
+node render.js figure-litote      un post
+node render.js figure-litote/02   une slide
 ```
 
 Ensuite, dans TikTok : les PNG du dossier dans l'ordre (`01`, `02`, `03`…), le contenu de
@@ -95,8 +147,8 @@ Ensuite, dans TikTok : les PNG du dossier dans l'ordre (`01`, `02`, `03`…), le
 | `design/euphemisme.css` | tout le système de design (couleurs, composants, duotone) |
 | `design/fox.js` | injecte le renard dans chaque `.foxbadge` vide |
 | `assets/` | Nunito + les seules photos réellement utilisées |
-| `render.sh [slug]` | Chrome headless → les PNG en 1080×1440, puis les descriptions |
-| `descriptions.js` | écrit `posts/*/description.txt` (appelé par `render.sh`) |
+| `render.js` | Chrome headless → les PNG, puis les `description.txt` |
+| `.claude/hooks/auto-render.js` | le hook qui rend tout seul |
 
 **Un post = un dossier.** Il n'y a aucun manifeste à tenir à jour. Un dossier sans PNG est une
 idée pas encore produite.
@@ -112,10 +164,10 @@ la section `## Légende` du `legende.md`.
    `figure-litote/html/01.html` (typo seule) · `astuces-revisions/html/04.html` (carte produit).
    Depuis `posts/<slug>/html/`, les chemins sont `../../../design/euphemisme.css` et
    `../../../assets/`.
-3. Changer le fil de série, le titre, `.lead`, `.feature`.
+3. Changer le fil de série, le titre, `.lead`, la preuve, `.feature`.
 4. Compléter dans `legende.md` les sections `## Légende` et `## Hashtags`.
-5. `sh render.sh <slug>`, puis **regarder les PNG** — les collisions d'accents et les
-   débordements de titre ne se voient pas dans le HTML.
+5. **Regarder les PNG** — le hook les a déjà rendus. Les collisions d'accents, les débordements de
+   titre et les slides creuses ne se voient pas dans le HTML.
 
 ## Publier
 
