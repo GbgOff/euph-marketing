@@ -63,104 +63,65 @@ ligne voisine. Toujours vérifier le PNG rendu, pas seulement le HTML.
 
 # Comment ça marche
 
+Tout est **local**. Aucun service tiers, aucune clé, aucune publication automatique : on produit
+des PNG dans un dossier, et c'est toi qui les publies à la main depuis TikTok — c'est le seul
+moyen d'ajouter un son.
+
 ## La chaîne complète
 
 ```
-posts/<slug>/01.html  ──render.sh──>  posts/<slug>/png/*.png  ──git push──>  GitHub Pages
-                                                                                  |
-             posts/<slug>/legende.md ──┐                                          | URL publiques
-                                       v                                          v
-                                 publish.js  ──────────────────>  file d'attente Buffer
-                                                                                  |
-                                                                                  v
-                                                                    TikTok (@euphemisme.fr)
+posts/<slug>/html/01.html  ──render.sh──>  posts/<slug>/01.png
+posts/<slug>/legende.md    ──render.sh──>  posts/<slug>/description.txt
 ```
 
-**Une seule commande fait tout :**
+Une seule commande :
 
 ```
-sh go.sh figure-litote
+sh render.sh figure-litote      un post
+sh render.sh                    tous les posts
 ```
 
-1. rend les HTML du post en PNG 1080×1440,
-2. commite et pousse sur GitHub Pages,
-3. attend que Pages ait reconstruit, vérifie les images, crée le post dans Buffer.
-
-Buffer place le post au prochain créneau de ton planning ; **rien n'est publié sans que tu l'aies
-relu dans Buffer**.
+Ensuite, dans TikTok : les PNG du dossier dans l'ordre (`01`, `02`, `03`…), le contenu de
+`description.txt` en légende, le son choisi dans l'app.
 
 ## Les pièces
 
 | Chemin | Rôle |
 |---|---|
-| `posts/<slug>/01.html`, `02.html`… | une slide = un HTML autonome |
+| `posts/<slug>/01.png`, `02.png`… | **les visuels finis**, à la racine du dossier du post |
+| `posts/<slug>/html/01.html`, `02.html`… | la source : une slide = un HTML autonome |
 | `posts/<slug>/legende.md` | angle, plan des slides, légende, hashtags |
-| `posts/<slug>/png/` | les PNG rendus, générés |
 | `posts/<slug>/description.txt` | le texte à coller dans TikTok, généré |
 | `design/euphemisme.css` | tout le système de design (couleurs, composants, duotone) |
+| `design/fox.js` | injecte le renard dans chaque `.foxbadge` vide |
 | `assets/` | Nunito + les seules photos réellement utilisées |
-| `render.sh [slug]` | Chrome headless → `posts/*/png/*.png` en 1080×1440 |
-| `publish.js` | vérifie les images puis crée le post via l'API Buffer |
-| `go.sh <slug>` | enchaîne les trois étapes |
+| `render.sh [slug]` | Chrome headless → les PNG en 1080×1440, puis les descriptions |
 | `descriptions.js` | écrit `posts/*/description.txt` (appelé par `render.sh`) |
-| `.env` | les 3 clés — **jamais committé** |
 
-**Un post = un dossier.** Il n'y a aucun manifeste à tenir à jour : `publish.js` découvre les posts
-en listant `posts/`, et prend le titre dans le `# ` de `legende.md`. Un dossier sans `png/` est
-affiché comme une **idée** ; le script refuse de le publier.
+**Un post = un dossier.** Il n'y a aucun manifeste à tenir à jour. Un dossier sans PNG est une
+idée pas encore produite.
+
+`description.txt` est régénéré à chaque rendu : **ne jamais l'éditer à la main**, la source est
+la section `## Légende` du `legende.md`.
 
 ## Créer un nouveau post
 
-1. `mkdir posts/<slug>` et y écrire `legende.md` (angle, plan des slides).
-2. Copier des HTML existants selon la mise en page voulue :
-   `astuces-revisions/01.html` (photo à droite) · `astuces-revisions/02.html` (schéma) ·
-   `figure-litote/01.html` (typo seule) · `astuces-revisions/04.html` (carte produit).
-   Depuis `posts/<slug>/`, les chemins sont `../../design/euphemisme.css` et `../../assets/`.
+1. `mkdir -p posts/<slug>/html` et écrire `posts/<slug>/legende.md` (angle, plan des slides).
+2. Copier des HTML existants dans `html/` selon la mise en page voulue :
+   `astuces-revisions/html/01.html` (photo à droite) · `astuces-revisions/html/02.html` (schéma) ·
+   `figure-litote/html/01.html` (typo seule) · `astuces-revisions/html/04.html` (carte produit).
+   Depuis `posts/<slug>/html/`, les chemins sont `../../../design/euphemisme.css` et
+   `../../../assets/`.
 3. Changer le fil de série, le titre, `.lead`, `.feature`.
-4. Compléter dans `legende.md` les sections `## Légende` et `## Hashtags` — c'est exactement ce
-   que `publish.js` enverra à Buffer.
-5. `sh go.sh <slug>`.
+4. Compléter dans `legende.md` les sections `## Légende` et `## Hashtags`.
+5. `sh render.sh <slug>`, puis **regarder les PNG** — les collisions d'accents et les
+   débordements de titre ne se voient pas dans le HTML.
 
-## L'API Buffer — ce qu'il faut savoir
+## Publier
 
-- GraphQL sur `https://api.buffer.com`, clé personnelle en `Authorization: Bearer`.
-  Disponible sur tous les plans, gratuit inclus.
-  ⚠️ L'ancienne API REST est **retirée le 1er février 2027** — ne jamais suivre un tuto legacy.
-- **Buffer n'accepte pas d'upload de fichier.** Les PNG doivent être servis en HTTPS public, en
-  lien direct, et **rester joignables jusqu'à la publication** (Buffer les récupère au moment où
-  le post part, parfois des jours plus tard). D'où GitHub Pages plutôt qu'une URL signée.
-- `assets` est une **liste ordonnée** → l'ordre du carrousel = l'ordre alphabétique des fichiers
-  (`01.png`, `02.png`, `03.png`). TikTok accepte **10 images maximum**.
-- La requête `channels` exige un `organizationId` que la doc publique n'indique pas dans son
-  exemple. `publish.js` le résout tout seul via `account { organizations }`.
-- `publish.js` compare l'empreinte MD5 de chaque image locale à celle servie en ligne. Il refuse
-  d'envoyer si elles diffèrent — sinon on programmerait un post pointant vers une vieille image,
-  et l'erreur n'apparaîtrait que des jours plus tard, au moment de la publication.
+À la main, depuis le téléphone. Les PNG sont dans `posts/<slug>/`, la légende dans
+`description.txt` du même dossier. TikTok accepte **10 images maximum** par carrousel, dans
+l'ordre où on les sélectionne.
 
-## Deux voies de publication
-
-**Automatique (Buffer)** — `sh go.sh <slug>`. Buffer publie seul au créneau. **Sans son** :
-l'API TikTok n'expose aucun champ audio (`TikTokPostMetadataInput` = `title` + `isAiGenerated`),
-et Buffer n'a pas accès à la bibliothèque musicale. Pas non plus de dépôt dans les brouillons
-TikTok : ça n'existe ni côté Buffer ni côté API.
-
-**Manuelle avec son** — depuis le téléphone, via GitHub Pages :
-
-```
-https://GbgOff.github.io/euph-marketing/posts/<slug>/png/01.png
-https://GbgOff.github.io/euph-marketing/posts/<slug>/description.txt
-```
-
-Appui long sur chaque image pour l'enregistrer dans la pellicule, puis copier la
-description. Dans TikTok, les images se sélectionnent dans l'ordre, le son se choisit
-normalement. `description.txt` est régénéré par `render.sh` : ne jamais l'éditer à la
-main, la source est la section `## Légende` du `legende.md`.
-
-`publish.js` accepte aussi `--draft` (brouillon Buffer, rien de programmé) et `--notify`
-(Buffer notifie au créneau, on finit dans TikTok).
-
-## Secrets
-
-`.env` contient `BUFFER_TOKEN`, `BUFFER_CHANNEL_ID`, `PAGES_BASE_URL` (modèle dans
-`.env.example`). Le dépôt GitHub étant **public**, `.gitignore` exclut `.env` et le brief
-marketing. Après toute modification du `.gitignore` : `git check-ignore -v .env`.
+Le dépôt GitHub est **public** : `.gitignore` exclut le brief marketing. Vérifier après toute
+modification du `.gitignore`.
