@@ -24,8 +24,14 @@
   }
   .photo.hero img { object-position: 62% 14%; }
 
-  .lead { position: absolute; left: 76px; top: 736px; width: 452px; z-index: 30; }
-  .feature { position: absolute; left: 76px; bottom: 168px; width: 452px; z-index: 30; }
+  .lead { position: absolute; left: 76px; top: 664px; width: 448px; z-index: 30; }
+
+  /* le protocole, en trois gestes */
+  .etapes { position: absolute; left: 76px; top: 900px; width: 448px; z-index: 30; }
+  .etapes li { font-size: 28px; padding: 18px 0; gap: 18px; }
+  .etapes li .n { min-width: 34px; }
+
+  .feature { position: absolute; left: 76px; top: 1180px; width: 448px; z-index: 30; }
 </style>
 </head>
 <body>
@@ -42,8 +48,14 @@
   <div class="photo hero"><img src="../../../assets/photo-g.jpg" alt=""></div>
 
   <p class="lead">Ton cerveau confond <strong>&laquo;&nbsp;je reconnais&nbsp;&raquo;</strong> et
-  <strong>&laquo;&nbsp;je sais&nbsp;&raquo;</strong>. Ferme le cours, prends une feuille blanche
-  et restitue de m&eacute;moire. C'est l'effort de rappel qui grave, pas la lecture.</p>
+  <strong>&laquo;&nbsp;je sais&nbsp;&raquo;</strong>. C'est l'effort de rappel qui grave,
+  jamais la lecture.</p>
+
+  <ol class="etapes">
+    <li><span class="n">01</span> Ferme le cours</li>
+    <li><span class="n">02</span> Restitue <span class="t">par &eacute;crit</span></li>
+    <li><span class="n">03</span> Les trous <span class="t">sont ta fiche</span></li>
+  </ol>
 
   <p class="feature">Dans <b>Euph&eacute;misme</b>, tu ne relis jamais&nbsp;: 12&nbsp;types
   d'exercices t'obligent &agrave; r&eacute;pondre.</p>

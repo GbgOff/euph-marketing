@@ -7,9 +7,9 @@
 <style>
   .title { position: absolute; top: 252px; left: 76px; right: 60px;
            font-size: 114px; line-height: 1.06; z-index: 25; }
-  .quizcard { position: absolute; left: 76px; right: 76px; top: 548px;
-              padding: 38px 42px 42px; z-index: 30; }
-  .answers { position: absolute; left: 76px; right: 76px; top: 872px;
+  .quizcard { position: absolute; left: 76px; right: 76px; top: 528px;
+              padding: 36px 42px 40px; z-index: 30; }
+  .answers { position: absolute; left: 76px; right: 76px; top: 888px;
              display: flex; gap: 24px; z-index: 30; }
   .answers .a {
     flex: 1; text-align: center;
@@ -22,10 +22,11 @@
     letter-spacing: .06em; text-transform: uppercase;
     color: var(--eel);
   }
-  .pin { position: absolute; left: 76px; top: 1032px; z-index: 30;
+  .pin { position: absolute; left: 76px; top: 1030px; z-index: 30;
          font-size: 25px; font-weight: 800; letter-spacing: .08em;
          text-transform: uppercase; color: var(--fox-dark); }
-  .sign { position: absolute; left: 76px; bottom: 128px; z-index: 35; }
+  .indice { position: absolute; left: 76px; right: 88px; top: 1086px; z-index: 30; }
+  .sign { position: absolute; left: 76px; bottom: 118px; z-index: 35; }
 </style>
 </head>
 <body>
@@ -41,6 +42,8 @@
   <div class="quizcard appcard">
     <span class="chip">Sur ta copie</span>
     <div class="quote">&laquo;&nbsp;Tu ne t'en sors<br>pas mal.&nbsp;&raquo;</div>
+    <div class="gloss">Une remarque de prof en marge d'une copie. Att&eacute;nu&eacute;e, oui&nbsp;&mdash;
+    mais dans quel sens&nbsp;?</div>
   </div>
 
   <div class="answers">
@@ -49,6 +52,10 @@
   </div>
 
   <div class="pin">R&eacute;ponse en description</div>
+
+  <p class="indice lead"><strong>Pour trancher&nbsp;:</strong> demande-toi si la phrase
+  <b>adoucit une r&eacute;alit&eacute; p&eacute;nible</b>, ou si elle <b>nie le contraire</b>
+  pour dire plus fort.</p>
 
   <div class="sign">
     <div class="foxbadge"></div>
