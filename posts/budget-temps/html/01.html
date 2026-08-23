@@ -9,8 +9,11 @@
            font-size: 118px; line-height: .95; z-index: 25; }
   .lead { position: absolute; left: 76px; right: 100px; top: 540px; z-index: 30; }
   .proofs { position: absolute; left: 76px; right: 76px; top: 730px; z-index: 30; }
-  .proofs li { font-size: 38px; padding: 28px 0; }
-  .proofs li .n { font-size: 26px; min-width: 210px; color: var(--wolf); }
+  .proofs { top: 700px; }
+  .proofs li { font-size: 38px; padding: 24px 0; align-items: flex-start; }
+  .proofs li .n { font-size: 26px; min-width: 210px; color: var(--wolf); padding-top: 12px; }
+  .proofs li .s { display: block; font-size: 26px; font-weight: 600;
+                  color: var(--wolf); margin-top: 6px; }
   .sign { position: absolute; left: 76px; bottom: 124px; z-index: 35; }
 </style>
 </head>
@@ -25,9 +28,12 @@
   &Ccedil;a para&icirc;t loin. Sauf que sur ces 40&nbsp;semaines, tu vas en passer 8 en vacances.</p>
 
   <ul class="proofs">
-    <li><span class="n">Rentr&eacute;e</span> septembre</li>
-    <li><span class="n">&Eacute;crit</span> mi-juin</li>
-    <li><span class="n">Oral</span> fin juin</li>
+    <li><span class="n">Rentr&eacute;e</span> <span>septembre
+      <span class="s">40 semaines devant toi, sur le papier</span></span></li>
+    <li><span class="n">&Eacute;crit</span> <span>mi-juin
+      <span class="s">commentaire <b>ou</b> dissertation, au choix</span></span></li>
+    <li><span class="n">Oral</span> <span>fin juin
+      <span class="s">explication lin&eacute;aire <b>puis</b> entretien</span></span></li>
   </ul>
 
   <div class="sign">
