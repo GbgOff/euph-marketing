@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme — bac-de-francais 01</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  /* ---- couverture, registre « convocation » ----
+     le compteur est une frise : quatre segments, de l'écrit à ce qu'il faut retenir. */
+  .title {
+    position: absolute; top: 258px; left: 168px; right: 66px;
+    font-size: 104px; line-height: 1.06; z-index: 25;
+  }
+  .accroche {
+    position: absolute; left: 168px; top: 818px; width: 810px; z-index: 30;
+    font-size: 45px; line-height: 1.32; font-weight: 800; color: var(--eel);
+  }
+  .frise {
+    position: absolute; left: 168px; top: 1016px; width: 800px; z-index: 30;
+    display: flex; gap: 12px; align-items: center;
+  }
+  .frise .s {
+    flex: 1; height: 26px; border-radius: 13px;
+    background: rgba(50,45,39,.12);
+  }
+  .frise .s.on { background: var(--fox); box-shadow: 0 6px 0 var(--fox-dark); }
+  .note { position: absolute; left: 174px; top: 1104px; z-index: 34; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-pervenche">
+
+  <h1 class="title display">
+    Le bac de<br>
+    fran&ccedil;ais,<br>
+    ce qui <span class="hl j">t'attend</span>
+  </h1>
+
+  <p class="accroche">Deux &eacute;preuves, deux notes, et personne ne t'a
+  jamais expliqu&eacute; comment elles se passent.</p>
+
+  <div class="frise">
+    <div class="s on"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+  </div>
+
+  <div class="note manuscrit penche rouge">&agrave; garder pour juin</div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

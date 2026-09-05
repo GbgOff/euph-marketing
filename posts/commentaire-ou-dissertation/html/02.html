@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme — commentaire-ou-dissertation 02</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  /* mise en page du post : une question en haut, deux issues en vis-à-vis en bas.
+     Le fil de cases à cocher tient lieu de numéro d'étape. */
+  .fil {
+    position: absolute; left: 168px; top: 168px; z-index: 32;
+    display: flex; gap: 14px; align-items: center;
+  }
+  .fil .c {
+    width: 56px; height: 56px; border-radius: 12px;
+    border: 4px solid rgba(50,45,39,.18);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; font-weight: 900; color: var(--wolf);
+  }
+  .fil .c.on {
+    background: var(--fox); border-color: var(--fox-dark);
+    color: var(--on-accent); box-shadow: 0 6px 0 var(--fox-dark);
+  }
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 258px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .title { font-size: 72px; line-height: 1.02; }
+  .corps { margin-top: 26px; font-size: 44px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 14px; max-width: 380px; }
+
+  .duel { margin-top: auto; display: flex; flex-direction: column; gap: 20px; }
+  .duel .b { display: flex; align-items: center; gap: 22px; padding: 26px 30px; border-radius: 28px; }
+  .duel .ok { background: rgba(150,226,110,.18); border: 4px solid rgba(63,154,51,.46); }
+  .duel .ko { background: rgba(255,138,183,.16); border: 4px solid rgba(196,72,92,.42); }
+  .duel .si { flex: 1; font-size: 33px; font-weight: 800; line-height: 1.26; color: var(--eel); }
+  .duel .fl { flex: none; font-size: 36px; font-weight: 900; color: var(--wolf); }
+  .duel .then { flex: none; width: 296px; font-size: 34px; font-weight: 900; line-height: 1.18; color: var(--eel); }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-abricot">
+
+  <div class="fil">
+    <div class="c">1</div><div class="c on">2</div><div class="c">3</div><div class="c">4</div>
+  </div>
+
+  <div class="zone">
+
+    <h1 class="title display">Regarde d'abord<br>les &oelig;uvres</h1>
+
+    <p class="corps">Chaque sujet de dissertation porte sur
+    <span class="hl j">une &oelig;uvre du programme</span> et son parcours. Une &oelig;uvre
+    que tu n'as pas lue, tu ne l'inventes pas en quatre heures.</p>
+
+    <div class="note manuscrit penche rouge">le r&eacute;sum&eacute; ne suffit pas :<br>il faut des passages</div>
+
+    <div class="duel">
+      <div class="b ok">
+        <div class="si">Tu as lu et travaill&eacute; l'une des &oelig;uvres propos&eacute;es</div>
+        <div class="fl">&rarr;</div>
+        <div class="then">la dissertation reste ouverte</div>
+      </div>
+      <div class="b ko">
+        <div class="si">Tu ne reconnais <span class="hl r">aucune</span> des &oelig;uvres</div>
+        <div class="fl">&rarr;</div>
+        <div class="then">commentaire, sans h&eacute;siter</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Les &oelig;uvres au programme, fich&eacute;es &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

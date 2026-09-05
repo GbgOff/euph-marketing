@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme — conclusion-trois-phrases 01</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  /* ---- couverture, registre « fin de copie » ----
+     le compteur est la place vide des trois phrases, et le point final. */
+  .title {
+    position: absolute; top: 264px; left: 168px; right: 66px;
+    font-size: 108px; line-height: 1.06; z-index: 25;
+  }
+  .accroche {
+    position: absolute; left: 168px; top: 826px; width: 800px; z-index: 30;
+    font-size: 45px; line-height: 1.32; font-weight: 800; color: var(--eel);
+  }
+  .lignes {
+    position: absolute; left: 168px; top: 1006px; width: 720px; z-index: 30;
+    display: flex; flex-direction: column; gap: 22px;
+  }
+  .lignes .l { height: 12px; border-radius: 6px; background: rgba(50,45,39,.14); }
+  .lignes .l.on { background: var(--fox); box-shadow: 0 5px 0 var(--fox-dark); }
+  .lignes .l.court { width: 46%; }
+  .note { position: absolute; left: 174px; top: 1128px; z-index: 34; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-vert">
+
+  <h1 class="title display">
+    Ta conclusion<br>
+    en <span class="hl j">trois</span><br>
+    phrases
+  </h1>
+
+  <p class="accroche">Cinq minutes &agrave; la fin de l'&eacute;preuve, et presque
+  tout le monde les g&acirc;che.</p>
+
+  <div class="lignes">
+    <div class="l on"></div>
+    <div class="l"></div>
+    <div class="l court"></div>
+  </div>
+
+  <div class="note manuscrit penche rouge">le correcteur la lit en entier</div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

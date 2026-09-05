@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme — vingt-minutes-oral 03</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  /* mise en page du post : une barre de temps en tête de colonne, découpée
+     à l'échelle des durées réelles. Le segment allumé est celui de la slide. */
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 158px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .chrono { display: flex; gap: 10px; align-items: stretch; }
+  .chrono .s {
+    min-width: 100px; height: 66px; border-radius: 16px;
+    border: 4px solid rgba(50,45,39,.16);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 25px; font-weight: 900; color: var(--wolf);
+  }
+  .chrono .s.on {
+    background: var(--fox); border-color: var(--fox-dark);
+    color: var(--on-accent); box-shadow: 0 7px 0 var(--fox-dark);
+  }
+  .chrono .prep { flex: 30; }
+  .chrono .lect { flex: 2; }
+  .chrono .expl { flex: 10; }
+  .chrono .entr { flex: 8; }
+
+  .title { margin-top: 34px; font-size: 72px; line-height: 1.02; }
+  .corps { margin-top: 24px; font-size: 44px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 12px; max-width: 400px; }
+  .dans  { margin-top: 20px; font-size: 32px; line-height: 1.32; font-weight: 800; color: var(--eel); }
+
+  .fiche {
+    margin-top: auto;
+    background: rgba(255,253,248,.94);
+    border: 4px solid rgba(50,45,39,.12); border-bottom-width: 10px;
+    border-radius: 28px; padding: 24px 32px 26px;
+    box-shadow: 0 18px 34px rgba(50,45,39,.10);
+    transform: rotate(-.7deg);
+  }
+  .fiche .t { font-size: 24px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; color: var(--wolf); }
+  .fiche .l { display: flex; align-items: baseline; gap: 16px; padding: 8px 0; }
+  .fiche .l .m { flex: none; font-size: 28px; font-weight: 900; color: var(--fox-dark); }
+  .fiche .l .x { flex: 1; font-size: 31px; font-weight: 800; color: var(--eel); line-height: 1.24; }
+  .fiche .l .x i { font-style: normal; font-weight: 700; color: var(--wolf); }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+
+  /* le vers marqué comme on marque une partition : une barre par respiration */
+  .fiche .vers { font-size: 38px; font-weight: 800; color: var(--eel); line-height: 1.4; }
+  .fiche .vers .b { color: var(--fox-dark); font-weight: 900; padding: 0 4px; }
+  .fiche .src { margin-top: 8px; font-size: 24px; font-weight: 700; color: var(--wolf); }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-corail">
+
+  <div class="zone">
+
+    <div class="chrono">
+      <div class="s prep">30 min</div>
+      <div class="s lect on">2 min</div>
+      <div class="s expl">10 min</div>
+      <div class="s entr">8 min</div>
+    </div>
+
+    <h1 class="title display">Tu lis le texte<br>&agrave; voix haute</h1>
+
+    <p class="corps">La lecture est not&eacute;e&nbsp;: <span class="hl j">2 points sur 20</span>,
+    et presque personne ne la pr&eacute;pare. Elle se travaille en une soir&eacute;e.</p>
+
+    <div class="note manuscrit penche rouge">lis-la trois fois<br>chez toi, &agrave; voix haute</div>
+
+    <div class="fiche">
+      <div class="t">Marque tes respirations au crayon</div>
+      <p class="vers">Le vent se l&egrave;ve&nbsp;! <span class="b">/</span>
+      il faut tenter de vivre&nbsp;!</p>
+      <p class="src">Paul Val&eacute;ry, <i>Le Cimeti&egrave;re marin</i></p>
+      <div class="l"><div class="m">&middot;</div><div class="x">tu annonces <span class="hl b">l'auteur, le titre</span>, puis tu lis</div></div>
+      <div class="l"><div class="m">&middot;</div><div class="x">une barre &agrave; chaque ponctuation forte&nbsp;: <span class="hl v">tu ralentis l&agrave;</span></div></div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">L'explication lin&eacute;aire, texte par texte &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

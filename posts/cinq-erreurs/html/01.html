@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme — cinq-erreurs 01</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  /* ---- couverture, registre « copie corrigée » ----
+     le compteur est une rangée de croix au feutre : cinq erreurs, la première ouverte. */
+  .title {
+    position: absolute; top: 250px; left: 168px; right: 66px;
+    font-size: 100px; line-height: 1.06; z-index: 25;
+  }
+  .accroche {
+    position: absolute; left: 168px; top: 828px; width: 810px; z-index: 30;
+    font-size: 45px; line-height: 1.32; font-weight: 800; color: var(--eel);
+  }
+  .croix {
+    position: absolute; left: 168px; top: 1016px; z-index: 30;
+    display: flex; gap: 18px; align-items: center;
+  }
+  .croix .c {
+    width: 78px; height: 78px; border-radius: 16px;
+    border: 5px solid rgba(50,45,39,.18);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 40px; font-weight: 900; color: var(--rouge);
+  }
+  .croix .c.on { background: var(--fox); border-color: var(--fox-dark); box-shadow: 0 8px 0 var(--fox-dark); }
+  .note { position: absolute; left: 174px; top: 1136px; z-index: 34; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-ambre">
+
+  <h1 class="title display">
+    Les 5 <span class="hl r">erreurs</span><br>
+    qui co&ucirc;tent<br>
+    le plus de<br>
+    points
+  </h1>
+
+  <p class="accroche">Elles n'ont rien &agrave; voir avec ton niveau. Elles se corrigent
+  en une soir&eacute;e.</p>
+
+  <div class="croix">
+    <div class="c on">&#10007;</div>
+    <div class="c">&#10007;</div>
+    <div class="c">&#10007;</div>
+    <div class="c">&#10007;</div>
+    <div class="c">&#10007;</div>
+  </div>
+
+  <div class="note manuscrit penche rouge">tu en fais au moins deux</div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

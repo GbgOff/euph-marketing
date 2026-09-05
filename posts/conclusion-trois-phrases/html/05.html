@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme — conclusion-trois-phrases 05</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  /* mise en page du post : la conclusion s'écrit sous les yeux du lecteur.
+     Le bloc du bas grossit d'une phrase par slide, c'est lui le repère de progression. */
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 172px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .rang {
+    align-self: flex-start;
+    background: var(--fox); color: var(--on-accent);
+    border-radius: 999px; padding: 10px 24px 12px;
+    font-size: 25px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase;
+    box-shadow: 0 7px 0 var(--fox-dark);
+  }
+  .title { margin-top: 22px; font-size: 72px; line-height: 1.02; }
+  .corps { margin-top: 24px; font-size: 44px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 12px; max-width: 400px; }
+  .dans  { margin-top: 18px; font-size: 32px; line-height: 1.32; font-weight: 800; color: var(--eel); }
+
+  /* la conclusion en cours d'écriture : les phrases déjà posées en gris, la nouvelle en noir */
+  .brouillon {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12); border-bottom-width: 10px;
+    border-radius: 28px; padding: 22px 30px 26px;
+    box-shadow: 0 18px 34px rgba(50,45,39,.10);
+    transform: rotate(-.6deg);
+  }
+  .brouillon .t {
+    font-size: 23px; font-weight: 900; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--wolf);
+  }
+  .brouillon .li { margin-top: 12px; font-size: 31px; line-height: 1.34; font-weight: 700; }
+  .brouillon .li.old  { color: var(--wolf); }
+  .brouillon .li.neuf { color: var(--eel); font-weight: 800; }
+  .brouillon .li.vide { height: 26px; margin-top: 26px; border-bottom: 3px dashed rgba(50,45,39,.20); }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+
+  /* les interdits, barrés comme sur un brouillon */
+  .jamais { margin-top: 22px; display: flex; flex-direction: column; gap: 8px; }
+  .jamais .l { display: flex; align-items: baseline; gap: 16px; font-size: 32px; font-weight: 800; color: var(--eel); line-height: 1.26; }
+  .jamais .l .m { flex: none; font-size: 28px; font-weight: 900; color: var(--rouge); }
+  .brouillon .lab { font-size: 25px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; color: var(--wolf); }
+  .brouillon .li.gab { margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-vert">
+
+  <div class="zone">
+
+    <div class="rang">&Agrave; retenir</div>
+
+    <h1 class="title display">Ce qu'on n'y<br>met jamais</h1>
+
+    <p class="corps">La conclusion <span class="hl b">ferme</span> la copie&nbsp;: rien de neuf
+    n'y entre.</p>
+
+    <div class="jamais">
+      <div class="l"><span class="m">&#10007;</span><span>une <span class="hl r">citation</span> qui n'a pas &eacute;t&eacute; analys&eacute;e avant</span></div>
+      <div class="l"><span class="m">&#10007;</span><span>une <span class="hl r">id&eacute;e</span> que tu n'as d&eacute;velopp&eacute;e nulle part</span></div>
+      <div class="l"><span class="m">&#10007;</span><span>&laquo;&nbsp;en conclusion, nous avons vu que&hellip;&nbsp;&raquo;</span></div>
+    </div>
+
+    <p class="dans">La conclusion se travaille avec l'intro sur <b>Euph&eacute;misme</b>,
+    en cinq minutes.</p>
+
+    <div class="brouillon">
+      <div class="t">Le squelette, pour n'importe quel sujet</div>
+      <p class="li gab"><span class="lab">Bilan</span><br>ce que chaque partie a montr&eacute;, une ligne chacune.</p>
+      <p class="li gab"><span class="lab">R&eacute;ponse</span><br><span class="hl j">la question du sujet, tranch&eacute;e</span>, avec ses mots.</p>
+      <p class="li gab"><span class="lab">Ouverture</span><br>une question qui reste, ou rien du tout.</p>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">L'intro, le paragraphe, la conclusion &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

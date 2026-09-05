@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme — commentaire-ou-dissertation 04</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .fil {
+    position: absolute; left: 168px; top: 168px; z-index: 32;
+    display: flex; gap: 14px; align-items: center;
+  }
+  .fil .c {
+    width: 56px; height: 56px; border-radius: 12px;
+    border: 4px solid rgba(50,45,39,.18);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; font-weight: 900; color: var(--wolf);
+  }
+  .fil .c.on {
+    background: var(--fox); border-color: var(--fox-dark);
+    color: var(--on-accent); box-shadow: 0 6px 0 var(--fox-dark);
+  }
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 258px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .title { font-size: 72px; line-height: 1.02; }
+  .corps { margin-top: 24px; font-size: 44px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 12px; max-width: 380px; }
+
+  /* le texte d'essai, posé sur une fiche : ce qu'on doit voir en cinq minutes */
+  .essai {
+    margin-top: 26px;
+    background: rgba(255,253,248,.94);
+    border: 4px solid rgba(50,45,39,.12); border-bottom-width: 10px;
+    border-radius: 28px; padding: 26px 32px 28px;
+    box-shadow: 0 18px 34px rgba(50,45,39,.10);
+    transform: rotate(-.7deg);
+  }
+  .essai .ex  { font-size: 36px; line-height: 1.36; font-weight: 800; color: var(--eel); }
+  .essai .dec { margin-top: 14px; font-size: 29px; line-height: 1.32; font-weight: 700; color: var(--wolf); }
+  .essai .dec b { color: var(--eel); font-weight: 900; }
+
+  .duel { margin-top: auto; display: flex; flex-direction: column; gap: 18px; }
+  .duel .b { display: flex; align-items: center; gap: 22px; padding: 24px 30px; border-radius: 28px; }
+  .duel .ok { background: rgba(150,226,110,.18); border: 4px solid rgba(63,154,51,.46); }
+  .duel .ko { background: rgba(255,138,183,.16); border: 4px solid rgba(196,72,92,.42); }
+  .duel .si { flex: 1; font-size: 33px; font-weight: 800; line-height: 1.26; color: var(--eel); }
+  .duel .fl { flex: none; font-size: 36px; font-weight: 900; color: var(--wolf); }
+  .duel .then { flex: none; width: 296px; font-size: 34px; font-weight: 900; line-height: 1.18; color: var(--eel); }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-abricot">
+
+  <div class="fil">
+    <div class="c">1</div><div class="c">2</div><div class="c">3</div><div class="c on">4</div>
+  </div>
+
+  <div class="zone">
+
+    <h1 class="title display">Lis dix lignes<br>du texte</h1>
+
+    <p class="corps">Le commentaire n'est pas la solution de repli : il faut
+    <span class="hl j">voir quelque chose</span> dans le texte.</p>
+
+    <div class="essai">
+      <p class="ex">Il ouvrit la fen&ecirc;tre. Il ne pleuvait pas.
+      Il <span class="hl b">referma</span> la fen&ecirc;tre.</p>
+      <p class="dec">Trois phrases courtes, un verbe repris : <b>quelqu’un tourne en rond</b>.</p>
+    </div>
+
+
+    <div class="duel">
+      <div class="b ok">
+        <div class="si">Tu rep&egrave;res trois choses &agrave; dire</div>
+        <div class="fl">&rarr;</div>
+        <div class="then">commentaire</div>
+      </div>
+      <div class="b ko">
+        <div class="si">Le texte reste <span class="hl r">muet</span></div>
+        <div class="fl">&rarr;</div>
+        <div class="then">reviens &agrave; la dissert</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Les &oelig;uvres au programme, fich&eacute;es &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

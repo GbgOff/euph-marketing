@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme — commentaire-ou-dissertation 03</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .fil {
+    position: absolute; left: 168px; top: 168px; z-index: 32;
+    display: flex; gap: 14px; align-items: center;
+  }
+  .fil .c {
+    width: 56px; height: 56px; border-radius: 12px;
+    border: 4px solid rgba(50,45,39,.18);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; font-weight: 900; color: var(--wolf);
+  }
+  .fil .c.on {
+    background: var(--fox); border-color: var(--fox-dark);
+    color: var(--on-accent); box-shadow: 0 6px 0 var(--fox-dark);
+  }
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 258px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .title { font-size: 72px; line-height: 1.02; }
+  .corps { margin-top: 18px; font-size: 44px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .dans  { margin-top: 16px; font-size: 32px; line-height: 1.32; font-weight: 800; color: var(--eel); }
+
+  /* l'inventaire au brouillon : ce qui compte comme exemple, ce qui n'en est pas un */
+  .inv { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+  .inv .l { display: flex; align-items: baseline; gap: 16px; font-size: 33px; font-weight: 800; color: var(--eel); line-height: 1.24; }
+  .inv .l i { font-style: normal; font-weight: 700; color: var(--wolf); }
+  .inv .m { flex: none; font-weight: 900; color: var(--fox-dark); }
+
+  .duel { margin-top: auto; display: flex; flex-direction: column; gap: 16px; }
+  .duel .b { display: flex; align-items: center; gap: 22px; padding: 26px 30px; border-radius: 28px; }
+  .duel .ok { background: rgba(150,226,110,.18); border: 4px solid rgba(63,154,51,.46); }
+  .duel .ko { background: rgba(255,138,183,.16); border: 4px solid rgba(196,72,92,.42); }
+  .duel .si { flex: 1; font-size: 33px; font-weight: 800; line-height: 1.26; color: var(--eel); }
+  .duel .fl { flex: none; font-size: 36px; font-weight: 900; color: var(--wolf); }
+  .duel .then { flex: none; width: 296px; font-size: 34px; font-weight: 900; line-height: 1.18; color: var(--eel); }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-abricot">
+
+  <div class="fil">
+    <div class="c">1</div><div class="c">2</div><div class="c on">3</div><div class="c">4</div>
+  </div>
+
+  <div class="zone">
+
+    <h1 class="title display">Compte tes<br>exemples</h1>
+
+    <p class="corps">Une dissertation tient sur
+    <span class="hl j">six exemples pr&eacute;cis</span>, deux ou trois par partie.</p>
+
+    <div class="inv">
+      <div class="l"><span class="m">&middot;</span><span>un <span class="hl b">passage</span> que tu peux situer <i>: qui parle, o&ugrave;, quand</i></span></div>
+      <div class="l"><span class="m">&middot;</span><span>une <span class="hl b">citation</span> de deux lignes, apprise</span></div>
+      <div class="l"><span class="m">&middot;</span><span><i>pas</i> <span class="hl r">&laquo;&nbsp;le personnage est triste&nbsp;&raquo;</span> <i>: &ccedil;a, c'est une impression</i></span></div>
+    </div>
+
+    <p class="dans">Dans <b>Euph&eacute;misme</b>, chaque &oelig;uvre a ses passages cl&eacute;s
+    d&eacute;j&agrave; rang&eacute;s.</p>
+
+    <div class="duel">
+      <div class="b ok">
+        <div class="si">Tu en listes cinq en trois minutes</div>
+        <div class="fl">&rarr;</div>
+        <div class="then">tu tiens ta dissertation</div>
+      </div>
+      <div class="b ko">
+        <div class="si">Tu s&egrave;ches apr&egrave;s deux</div>
+        <div class="fl">&rarr;</div>
+        <div class="then">le texte du commentaire, lui, est sous tes yeux</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Les &oelig;uvres au programme, fich&eacute;es &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

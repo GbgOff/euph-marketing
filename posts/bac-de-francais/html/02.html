@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme — bac-de-francais 02</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  /* mise en page du post : un bandeau de convocation en tête de colonne,
+     le titre dedans, la frise de progression dessous. Tout est dans la zone. */
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 152px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .bandeau {
+    background: var(--fox); color: var(--on-accent);
+    border-radius: 26px; padding: 22px 30px 24px;
+    box-shadow: 0 10px 0 var(--fox-dark);
+  }
+  .bandeau .k {
+    font-size: 23px; font-weight: 900; letter-spacing: .16em;
+    text-transform: uppercase; opacity: .9;
+  }
+  .bandeau .title { font-size: 62px; line-height: 1.04; margin-top: 10px; color: var(--on-accent); }
+  .bandeau .frise { margin-top: 20px; display: flex; gap: 10px; }
+  .bandeau .frise .s { flex: 1; height: 12px; border-radius: 6px; background: rgba(255,255,255,.34); }
+  .bandeau .frise .s.on { background: #fff; }
+
+  .corps { margin-top: 30px; font-size: 44px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 12px; max-width: 400px; }
+  .dans  { margin-top: 20px; font-size: 32px; line-height: 1.32; font-weight: 800; color: var(--eel); }
+
+  /* les rubriques, comme sur un formulaire : la clé à gauche, la valeur à droite */
+  .rub { margin-top: auto; }
+  .rub .r {
+    display: flex; align-items: baseline; gap: 24px;
+    padding: 18px 4px; border-bottom: 3px solid rgba(50,45,39,.12);
+  }
+  .rub .r:first-child { border-top: 3px solid rgba(50,45,39,.12); }
+  .rub .k {
+    flex: none; width: 236px; font-size: 26px; font-weight: 900;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--wolf);
+  }
+  .rub .v { flex: 1; font-size: 34px; font-weight: 800; color: var(--eel); line-height: 1.24; }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-pervenche">
+
+  <div class="zone">
+
+    <div class="bandeau">
+      <div class="k">&Eacute;preuve anticip&eacute;e &middot; l'&eacute;crit</div>
+      <h1 class="title display">L'&eacute;crit&nbsp;: quatre heures</h1>
+      <div class="frise"><div class="s on"></div><div class="s"></div><div class="s"></div><div class="s"></div></div>
+    </div>
+
+    <p class="corps">Tu choisis <span class="hl r">un seul</span> des deux exercices, en
+    arrivant. C'est la seule vraie d&eacute;cision de la journ&eacute;e.</p>
+
+    <div class="note manuscrit penche rouge">et on n'en change pas<br>&agrave; la deuxi&egrave;me heure</div>
+
+    <div class="rub">
+      <div class="r"><div class="k">Quand</div><div class="v">mi-juin, en fin de premi&egrave;re</div></div>
+      <div class="r"><div class="k">Dur&eacute;e</div><div class="v">4 heures</div></div>
+      <div class="r"><div class="k">Coefficient</div><div class="v">5, comme l'oral</div></div>
+      <div class="r"><div class="k">Au choix</div><div class="v"><span class="hl v">un commentaire de texte</span>, ou
+      <span class="hl j">trois sujets de dissertation</span>, chacun sur une &oelig;uvre du programme</div></div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">L'&eacute;crit et l'oral, m&eacute;thode par m&eacute;thode &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

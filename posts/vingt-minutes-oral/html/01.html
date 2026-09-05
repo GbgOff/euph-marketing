@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme — vingt-minutes-oral 01</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  /* ---- couverture, registre « chronomètre » ----
+     le compteur est la barre de temps de l'épreuve, à l'échelle. */
+  .title {
+    position: absolute; top: 264px; left: 168px; right: 66px;
+    font-size: 108px; line-height: 1.06; z-index: 25;
+  }
+  .accroche {
+    position: absolute; left: 168px; top: 830px; width: 800px; z-index: 30;
+    font-size: 45px; line-height: 1.32; font-weight: 800; color: var(--eel);
+  }
+  .chrono {
+    position: absolute; left: 168px; right: 74px; top: 1012px; z-index: 30;
+    display: flex; gap: 10px; align-items: stretch;
+  }
+  .chrono .s {
+    min-width: 104px; height: 74px; border-radius: 16px;
+    border: 5px solid rgba(50,45,39,.18);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; font-weight: 900; color: var(--wolf);
+  }
+  .chrono .s.on {
+    background: var(--fox); border-color: var(--fox-dark);
+    color: var(--on-accent); box-shadow: 0 8px 0 var(--fox-dark);
+  }
+  .chrono .prep { flex: 30; } .chrono .lect { flex: 2; }
+  .chrono .expl { flex: 10; } .chrono .entr { flex: 8; }
+  .note { position: absolute; left: 174px; top: 1136px; z-index: 34; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-corail">
+
+  <h1 class="title display">
+    L'oral,<br>
+    minute<br>
+    par <span class="hl j">minute</span>
+  </h1>
+
+  <p class="accroche">Personne ne te raconte ce qui se passe une fois
+  la porte ferm&eacute;e.</p>
+
+  <div class="chrono">
+    <div class="s prep on">30 min</div>
+    <div class="s lect">2 min</div>
+    <div class="s expl">10 min</div>
+    <div class="s entr">8 min</div>
+  </div>
+
+  <div class="note manuscrit penche rouge">la moiti&eacute; du temps, tu es seul</div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

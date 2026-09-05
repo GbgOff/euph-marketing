@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme — commentaire-ou-dissertation 05</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .fil {
+    position: absolute; left: 168px; top: 168px; z-index: 32;
+    display: flex; gap: 14px; align-items: center;
+  }
+  .fil .c {
+    width: 56px; height: 56px; border-radius: 12px;
+    background: var(--fox); border: 4px solid var(--fox-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; font-weight: 900; color: var(--on-accent);
+    box-shadow: 0 6px 0 var(--fox-dark);
+  }
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 258px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .title { font-size: 72px; line-height: 1.02; }
+  .corps { margin-top: 24px; font-size: 44px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 14px; max-width: 400px; }
+
+  /* le verdict : trois lignes, ce que chaque test décide */
+  .table { margin-top: auto; }
+  .table .r {
+    display: flex; align-items: center; gap: 22px;
+    padding: 22px 4px; border-bottom: 3px dashed rgba(50,45,39,.16);
+  }
+  .table .r:first-child { border-top: 3px dashed rgba(50,45,39,.16); }
+  .table .k { flex: 1; font-size: 34px; font-weight: 800; color: var(--eel); line-height: 1.2; }
+  .table .v { flex: none; width: 300px; font-size: 34px; font-weight: 900; color: var(--eel); }
+  .dans { margin-top: 24px; font-size: 32px; line-height: 1.32; font-weight: 800; color: var(--eel); }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-abricot">
+
+  <div class="fil">
+    <div class="c">1</div><div class="c">2</div><div class="c">3</div><div class="c">4</div>
+  </div>
+
+  <div class="zone">
+
+    <h1 class="title display">D&eacute;cide, et<br>n'y reviens plus</h1>
+
+    <p class="corps">Cinq minutes pour choisir, pas trente. Changer d'&eacute;preuve
+    &agrave; la deuxi&egrave;me heure, c'est <span class="hl r">une copie perdue</span>.</p>
+
+    <div class="note manuscrit penche rouge">note ton choix<br>en haut du brouillon</div>
+
+    <div class="table">
+      <div class="r">
+        <div class="k">Tu ne connais aucune des &oelig;uvres</div>
+        <div class="v"><span class="hl j">commentaire</span></div>
+      </div>
+      <div class="r">
+        <div class="k">Moins de cinq exemples en trois minutes</div>
+        <div class="v"><span class="hl j">commentaire</span></div>
+      </div>
+      <div class="r">
+        <div class="k">Le texte ne te dit rien</div>
+        <div class="v"><span class="hl b">dissertation</span></div>
+      </div>
+    </div>
+
+    <p class="dans">Les deux m&eacute;thodes sont sur <b>Euph&eacute;misme</b>, &eacute;tape par
+    &eacute;tape : tu t’entra&icirc;nes aux deux.</p>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Commentaire et dissertation, pas &agrave; pas &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>
