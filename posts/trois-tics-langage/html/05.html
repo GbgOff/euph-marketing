@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : trois-tics-langage 05</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .title { font-size: 70px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 30px; font-size: 40px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 10px; }
+
+  .tableau {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 10px;
+    border-radius: 28px;
+    padding: 24px 30px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .ligne {
+    display: flex; align-items: baseline; gap: 16px;
+    font-size: 29px; font-weight: 800; color: var(--eel); line-height: 1.3;
+  }
+  .barre { text-decoration: line-through; color: var(--rouge); flex: none; }
+  .fleche { color: var(--wolf); flex: none; font-weight: 900; }
+
+  .cta-bloc {
+    margin-top: 22px; font-size: 30px; line-height: 1.34;
+    font-weight: 800; color: var(--eel);
+  }
+  .cta-bloc b { font-weight: 900; }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-corail">
+
+  <div class="zone">
+
+    <h1 class="title display">Ta bo&icirc;te &agrave; outils<br>de rentr&eacute;e</h1>
+
+    <p class="corps">Remplace ces trois r&eacute;flexes d&egrave;s ton premier devoir. Tu gagnes <span class="hl j">2 &agrave; 3 points</span> imm&eacute;diatement.</p>
+
+    <div class="note manuscrit penche rouge">&agrave; garder pour le bac blanc</div>
+
+    <div class="tableau">
+      <div class="ligne">
+        <span class="barre">&laquo;&nbsp;veut dire&nbsp;&raquo;</span>
+        <span class="fleche">&rarr;</span>
+        <span><span class="hl v">sugg&egrave;re, d&eacute;nonce, r&eacute;v&egrave;le</span></span>
+      </div>
+      <div class="ligne">
+        <span class="barre">&laquo;&nbsp;&eacute;motions&nbsp;&raquo;</span>
+        <span class="fleche">&rarr;</span>
+        <span><span class="hl b">registre pr&eacute;cis + proc&eacute;d&eacute; cl&eacute;</span></span>
+      </div>
+      <div class="ligne">
+        <span class="barre">&laquo;&nbsp;int&eacute;ressant&nbsp;&raquo;</span>
+        <span class="fleche">&rarr;</span>
+        <span><span class="hl j">effet produit sur le lecteur</span></span>
+      </div>
+    </div>
+
+    <p class="cta-bloc">Les m&eacute;thodes officielles et 12 types d'exercices sur <b>euphemisme.fr</b></p>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>
