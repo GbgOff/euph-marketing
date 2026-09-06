@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : choisir-oeuvre-oral 01</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .title {
+    position: absolute; top: 250px; left: 168px; right: 66px;
+    font-size: 104px; line-height: 1.04; z-index: 25;
+  }
+  .accroche {
+    position: absolute; left: 168px; top: 810px; width: 800px; z-index: 30;
+    font-size: 45px; line-height: 1.32; font-weight: 800; color: var(--eel);
+  }
+  .accroche b { font-weight: 900; }
+  .compteur {
+    position: absolute; left: 168px; top: 1030px; z-index: 30;
+    display: flex; gap: 18px; align-items: center;
+  }
+  .compteur .e {
+    width: 74px; height: 74px; border-radius: 50%;
+    border: 5px solid rgba(50,45,39,.20);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 34px; font-weight: 900; color: var(--wolf);
+  }
+  .compteur .e.on {
+    border-color: var(--fox-dark); background: var(--fox);
+    color: var(--on-accent); box-shadow: 0 8px 0 var(--fox-dark);
+  }
+  .note { position: absolute; left: 174px; top: 1160px; z-index: 34; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-pervenche">
+
+  <h1 class="title display">
+    Choisir ton<br>
+    &oelig;uvre<br>
+    <span class="hl b">pour l'oral</span>
+  </h1>
+
+  <p class="accroche">80&nbsp;% des &eacute;l&egrave;ves font le mauvais calcul.
+  Voici comment <b>s&eacute;curiser 8 points</b> d&egrave;s septembre.</p>
+
+  <div class="compteur">
+    <div class="e on">1</div>
+    <div class="e">2</div>
+    <div class="e">3</div>
+    <div class="e">4</div>
+    <div class="e">5</div>
+  </div>
+
+  <div class="note manuscrit penche rouge">l'entretien dure 8 minutes</div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

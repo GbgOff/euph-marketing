@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : choisir-oeuvre-oral 02</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 70px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 36px; font-size: 42px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 10px; }
+
+  .compare { margin-top: auto; display: flex; flex-direction: column; gap: 18px; }
+  .ko {
+    background: rgba(240,121,138,.14); border: 3px solid rgba(240,121,138,.4);
+    border-radius: 20px; padding: 18px 24px;
+  }
+  .ko .t { font-size: 20px; font-weight: 900; text-transform: uppercase; color: var(--rouge); }
+  .ko .p { margin-top: 8px; font-size: 28px; line-height: 1.3; font-weight: 700; color: var(--eel); }
+
+  .ok {
+    background: rgba(150,226,110,.18); border: 3px solid rgba(63,154,51,.44);
+    border-radius: 20px; padding: 18px 24px;
+  }
+  .ok .t { font-size: 20px; font-weight: 900; text-transform: uppercase; color: #3F7A2F; }
+  .ok .p { margin-top: 8px; font-size: 30px; line-height: 1.3; font-weight: 800; color: var(--eel); }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-pervenche">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">1</div>
+      <h1 class="title display">&Eacute;viter le pi&egrave;ge<br>du livre court</h1>
+    </div>
+
+    <p class="corps">Prendre un livre de 60 pages lu sans envie est une <span class="hl r">erreur fatale</span>. Le jury voit en deux questions si tu r&eacute;cites une fiche internet.</p>
+
+    <div class="note manuscrit penche rouge">le jury pose des questions pr&eacute;cises</div>
+
+    <div class="compare">
+      <div class="ko">
+        <div class="t">Le mauvais calcul &middot; le livre le plus court</div>
+        <div class="p">Tu r&eacute;cites le r&eacute;sum&eacute; en 2 minutes. D&egrave;s la premi&egrave;re relance sur un personnage secondaire, tu bafouilles.</div>
+      </div>
+      <div class="ok">
+        <div class="t">Le bon calcul &middot; le livre que tu as aim&eacute;</div>
+        <div class="p">M&ecirc;me s'il fait 200 pages, tu en parles avec aisance et plaisir. L'entretien devient un &eacute;change vivant.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>
