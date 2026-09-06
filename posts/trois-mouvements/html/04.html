@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : trois-mouvements 04</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 68px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 36px; font-size: 42px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 10px; }
+
+  .fiche {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 10px;
+    border-radius: 28px;
+    padding: 26px 34px 28px;
+    box-shadow: 0 18px 34px rgba(50,45,39,.10);
+  }
+  .fiche .tag {
+    display: inline-block; padding: 4px 14px; border-radius: 8px;
+    font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em;
+    background: #FFF3A8; color: #5C4B00; margin-bottom: 12px;
+  }
+  .fiche .ex { font-size: 34px; line-height: 1.38; font-weight: 800; color: var(--eel); }
+  .fiche .dec { margin-top: 14px; font-size: 28px; line-height: 1.34; font-weight: 700; color: var(--wolf); }
+  .fiche .dec b { color: var(--eel); font-weight: 900; }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-ambre">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">3</div>
+      <h1 class="title display">Noter le changement<br>de cadrage</h1>
+    </div>
+
+    <p class="corps">Le texte fonctionne comme une cam&eacute;ra. Il passe souvent du <span class="hl b">plan d'ensemble</span> (le décor, la foule) au <span class="hl b">gros plan</span> (un geste, un regard).</p>
+
+    <div class="note manuscrit penche rouge">le jury adore cette pr&eacute;cision</div>
+
+    <div class="fiche">
+      <div class="tag">Zoom cin&eacute;matographique &middot; Roman</div>
+      <div class="ex">&laquo;&nbsp;La foule se bousculait sur les grands boulevards... Puis le regard se fige sur une main qui tremble.&nbsp;&raquo;</div>
+      <div class="dec"><b>Mouvement 1</b>&nbsp;: la fresque collective bruyante.<br><b>Mouvement 2</b>&nbsp;: l'angoisse intime et secr&egrave;te du personnage.</div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

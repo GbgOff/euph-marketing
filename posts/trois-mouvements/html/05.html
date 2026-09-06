@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : trois-mouvements 05</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .title { font-size: 70px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 30px; font-size: 40px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 10px; }
+
+  .tableau {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 10px;
+    border-radius: 28px;
+    padding: 24px 30px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .ligne {
+    display: flex; align-items: center; gap: 18px;
+    font-size: 28px; font-weight: 800; color: var(--eel);
+  }
+  .pastille {
+    flex: none; width: 34px; height: 34px; border-radius: 8px;
+  }
+  .pastille.j { background: #FFD84D; border: 2px solid #CCA000; }
+  .pastille.b { background: #7C90F5; border: 2px solid #4D64D6; }
+  .pastille.v { background: #96E26E; border: 2px solid #3F7A2F; }
+
+  .cta-bloc {
+    margin-top: 22px; font-size: 30px; line-height: 1.34;
+    font-weight: 800; color: var(--eel);
+  }
+  .cta-bloc b { font-weight: 900; }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-ambre">
+
+  <div class="zone">
+
+    <h1 class="title display">Ton brouillon d'oral<br>en 30 secondes</h1>
+
+    <p class="corps">Rep&egrave;re ces trois signaux d&egrave;s la premi&egrave;re lecture. Ton plan devient <span class="hl j">logique et inattaquable</span>.</p>
+
+    <div class="note manuscrit penche rouge">fini le saucissonnage au hasard</div>
+
+    <div class="tableau">
+      <div class="ligne">
+        <div class="pastille j"></div>
+        <div><b>1. Le pivot logique</b> &middot; <span class="hl j">mais, cependant, or, soudain</span></div>
+      </div>
+      <div class="ligne">
+        <div class="pastille b"></div>
+        <div><b>2. La bascule d'&eacute;nonciation</b> &middot; <span class="hl b">temps et pronoms</span></div>
+      </div>
+      <div class="ligne">
+        <div class="pastille v"></div>
+        <div><b>3. Le changement de cadrage</b> &middot; <span class="hl v">ensemble vers d&eacute;tail</span></div>
+      </div>
+    </div>
+
+    <p class="cta-bloc">Les 20 textes du programme d&eacute;coup&eacute;s et analys&eacute;s sur <b>euphemisme.fr</b></p>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

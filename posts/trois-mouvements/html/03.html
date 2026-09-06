@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : trois-mouvements 03</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 70px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 36px; font-size: 42px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+
+  .fiche {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 10px;
+    border-radius: 28px;
+    padding: 24px 34px 26px;
+    box-shadow: 0 18px 34px rgba(50,45,39,.10);
+  }
+  .fiche .tag {
+    display: inline-block; padding: 4px 14px; border-radius: 8px;
+    font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em;
+    background: #D8EBFF; color: #1E4F8A; margin-bottom: 12px;
+  }
+  .fiche .ex { font-size: 32px; line-height: 1.38; font-weight: 800; color: var(--eel); }
+  .fiche .dec { margin-top: 12px; font-size: 27px; line-height: 1.32; font-weight: 700; color: var(--wolf); }
+  .fiche .dec b { color: var(--eel); font-weight: 900; }
+
+  .dans { margin-top: 20px; font-size: 28px; line-height: 1.32; font-weight: 800; color: var(--eel); }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-ambre">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">2</div>
+      <h1 class="title display">Suivre les temps<br>et personnes</h1>
+    </div>
+
+    <p class="corps">Un changement de temps (<span class="hl b">imparfait vers pr&eacute;sent</span>) ou de pronom (<span class="hl b">&laquo;&nbsp;je&nbsp;&raquo; vers &laquo;&nbsp;nous&nbsp;&raquo;</span>) annonce toujours une nouvelle dynamique.</p>
+
+    <div class="fiche">
+      <div class="tag">Bascule grammaticale &middot; Rimbaud</div>
+      <div class="ex">&laquo;&nbsp;Je m'en allais, les poings dans mes poches crev&eacute;es... <span class="hl b">Et nous &eacute;coutions</span> les &eacute;toiles.&nbsp;&raquo;</div>
+      <div class="dec"><b>Le &laquo;&nbsp;je&nbsp;&raquo;</b> signe la solitude vagabonde.<br><b>Le &laquo;&nbsp;nous&nbsp;&raquo;</b> ouvre le po&egrave;me &agrave; une communion avec le monde. C'est <span class="hl v">la rupture du texte</span>.</div>
+    </div>
+
+    <p class="dans">Dans l'app <b>Euph&eacute;misme</b>, teste ton rep&eacute;rage des mouvements sur les textes officiels du bac.</p>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>
