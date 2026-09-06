@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : annoter-son-livre 02</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 70px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 36px; font-size: 42px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 12px; }
+
+  .fiche {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 10px;
+    border-radius: 28px;
+    padding: 26px 34px 28px;
+    box-shadow: 0 18px 34px rgba(50,45,39,.10);
+  }
+  .fiche .tag {
+    display: inline-block; padding: 4px 14px; border-radius: 8px;
+    font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em;
+    background: #FFF3A8; color: #5C4B00; margin-bottom: 12px;
+  }
+  .fiche .ex { font-size: 34px; line-height: 1.38; font-weight: 800; color: var(--eel); }
+  .fiche .dec { margin-top: 14px; font-size: 28px; line-height: 1.34; font-weight: 700; color: var(--wolf); }
+  .fiche .dec b { color: var(--eel); font-weight: 900; }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-vert">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">1</div>
+      <h1 class="title display">Poser l'onglet<br>du parcours</h1>
+    </div>
+
+    <p class="corps">Le prof n'&eacute;value pas l'intrigue&nbsp;: il regarde si
+    tu as compris le <span class="hl j">th&egrave;me impos&eacute;</span> au bac.</p>
+
+    <div class="note manuscrit penche rouge">un seul par chapitre suffit</div>
+
+    <div class="fiche">
+      <div class="tag">Onglet jaune &middot; parcours Zola</div>
+      <div class="ex">&laquo;&nbsp;Derri&egrave;re les portes acajou, les couloirs puent la mis&egrave;re et le mensonge.&nbsp;&raquo;</div>
+      <div class="dec">Parcours&nbsp;: <span class="hl b">D&eacute;voiler les rouages</span>. Zola montre le contraste entre le fa&ccedil;ade bourgeoise et les secrets cach&eacute;s.</div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>
