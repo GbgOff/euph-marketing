@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : ecrit-et-oral 04</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 70px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 36px; font-size: 42px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 10px; }
+
+  .pont {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 10px;
+    border-radius: 28px;
+    padding: 24px 34px 26px;
+    box-shadow: 0 18px 34px rgba(50,45,39,.10);
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .bloc-pont {
+    padding: 14px 20px; border-radius: 16px;
+  }
+  .bloc-pont.haut { background: #D8EBFF; border: 2px solid #1E4F8A; }
+  .bloc-pont.bas  { background: #FFF3A8; border: 2px solid #CCA000; }
+  .label-pont {
+    font-size: 20px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em;
+    margin-bottom: 6px;
+  }
+  .label-pont.b { color: #1E4F8A; }
+  .label-pont.j { color: #5C4B00; }
+  .txt-pont { font-size: 28px; font-weight: 800; color: var(--eel); line-height: 1.3; }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-pervenche">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">3</div>
+      <h1 class="title display">La passerelle de<br>la grammaire</h1>
+    </div>
+
+    <p class="corps">La question de langue n'est pas un d&eacute;tail. Ma&icirc;triser la syntaxe <span class="hl b">muscle directement tes phrases &agrave; l'&eacute;crit</span>.</p>
+
+    <div class="note manuscrit penche rouge">+2 points sur la note de langue</div>
+
+    <div class="pont">
+      <div class="bloc-pont haut">
+        <div class="label-pont b">&Agrave; l'oral &middot; 2 points de grammaire</div>
+        <div class="txt-pont">Identifier les propositions subordonn&eacute;es et la valeur des modes.</div>
+      </div>
+      <div class="bloc-pont bas">
+        <div class="label-pont j">&Agrave; l'&eacute;crit &middot; qualit&eacute; de style</div>
+        <div class="txt-pont">Fini les phrases courtes ou maladroites&nbsp;: ta r&eacute;daction gagne en fluidit&eacute; et en pr&eacute;cision.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

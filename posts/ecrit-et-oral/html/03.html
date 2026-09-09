@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : ecrit-et-oral 03</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 70px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 36px; font-size: 42px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+
+  .pont {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 10px;
+    border-radius: 28px;
+    padding: 24px 34px 26px;
+    box-shadow: 0 18px 34px rgba(50,45,39,.10);
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .bloc-pont {
+    padding: 14px 20px; border-radius: 16px;
+  }
+  .bloc-pont.haut { background: #D8EBFF; border: 2px solid #1E4F8A; }
+  .bloc-pont.bas  { background: #FFF3A8; border: 2px solid #CCA000; }
+  .label-pont {
+    font-size: 20px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em;
+    margin-bottom: 6px;
+  }
+  .label-pont.b { color: #1E4F8A; }
+  .label-pont.j { color: #5C4B00; }
+  .txt-pont { font-size: 28px; font-weight: 800; color: var(--eel); line-height: 1.3; }
+
+  .dans { margin-top: 20px; font-size: 28px; line-height: 1.32; font-weight: 800; color: var(--eel); }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-pervenche">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">2</div>
+      <h1 class="title display">La passerelle des<br>proc&eacute;d&eacute;s</h1>
+    </div>
+
+    <p class="corps">Les r&eacute;flexes d'analyse sont identiques. Un proc&eacute;d&eacute; d&eacute;cortiqu&eacute; &agrave; l'oral devient une <span class="hl j">sous-partie de commentaire</span>.</p>
+
+    <div class="pont">
+      <div class="bloc-pont haut">
+        <div class="label-pont b">&Agrave; l'oral &middot; explication lin&eacute;aire</div>
+        <div class="txt-pont">Rep&eacute;rage d'une antith&egrave;se brutale entre ombre et lumi&egrave;re.</div>
+      </div>
+      <div class="bloc-pont bas">
+        <div class="label-pont j">&Agrave; l'&eacute;crit &middot; r&eacute;daction du commentaire</div>
+        <div class="txt-pont">L'opposition des termes cr&eacute;e une tension et traduit le conflit int&eacute;rieur.</div>
+      </div>
+    </div>
+
+    <p class="dans">Dans l'app <b>Euph&eacute;misme</b>, entra&icirc;ne-toi avec 12 types d'exercices con&ccedil;us pour les deux &eacute;preuves.</p>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>
