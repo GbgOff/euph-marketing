@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : cinq-minutes-par-jour 02</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 70px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 36px; font-size: 42px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 10px; }
+
+  .bloc-piege {
+    margin-top: auto;
+    background: rgba(240,121,138,.14);
+    border: 4px solid rgba(240,121,138,.45);
+    border-bottom-width: 10px;
+    border-radius: 28px;
+    padding: 26px 34px 28px;
+  }
+  .bloc-piege .tag {
+    display: inline-block; padding: 4px 14px; border-radius: 8px;
+    font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em;
+    background: #FFD4DB; color: #9E1F35; margin-bottom: 12px;
+  }
+  .bloc-piege .ex { font-size: 34px; line-height: 1.38; font-weight: 800; color: var(--eel); }
+  .bloc-piege .dec { margin-top: 14px; font-size: 28px; line-height: 1.34; font-weight: 700; color: var(--wolf); }
+  .bloc-piege .dec b { color: var(--rouge); font-weight: 900; }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-vert">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">1</div>
+      <h1 class="title display">Le pi&egrave;ge des 2h<br>le dimanche soir</h1>
+    </div>
+
+    <p class="corps">Tu repousses jusqu'&agrave; 21h, tu ouvres ton classeur fatigu&eacute;, et ton cerveau <span class="hl r">sature au bout de 20 minutes</span>.</p>
+
+    <div class="note manuscrit penche rouge">l'illusion de r&eacute;viser</div>
+
+    <div class="bloc-piege">
+      <div class="tag">Dimanche soir &middot; blocage mental</div>
+      <div class="ex">Deux heures d'affil&eacute;e sur un cours indigeste cr&eacute;ent du stress, pas de la m&eacute;moire.</div>
+      <div class="dec">R&eacute;sultat&nbsp;: <b>80&nbsp;% de fatigue</b>, et le mardi matin en classe, tu as d&eacute;j&agrave; tout oubli&eacute;.</div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

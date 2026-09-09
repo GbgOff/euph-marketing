@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : cinq-minutes-par-jour 03</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 70px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 36px; font-size: 42px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+
+  .bloc-vert {
+    margin-top: auto;
+    background: rgba(150,226,110,.18);
+    border: 4px solid rgba(63,154,51,.44);
+    border-bottom-width: 10px;
+    border-radius: 28px;
+    padding: 26px 34px 28px;
+  }
+  .bloc-vert .tag {
+    display: inline-block; padding: 4px 14px; border-radius: 8px;
+    font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em;
+    background: #DCF8CE; color: #2B661E; margin-bottom: 12px;
+  }
+  .bloc-vert .ex { font-size: 34px; line-height: 1.38; font-weight: 800; color: var(--eel); }
+  .bloc-vert .dec { margin-top: 14px; font-size: 28px; line-height: 1.34; font-weight: 700; color: var(--wolf); }
+  .bloc-vert .dec b { color: #1F4D14; font-weight: 900; }
+
+  .dans { margin-top: 20px; font-size: 28px; line-height: 1.32; font-weight: 800; color: var(--eel); }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-vert">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">2</div>
+      <h1 class="title display">Le pouvoir des<br>5 minutes</h1>
+    </div>
+
+    <p class="corps">Dans le bus ou avant de dormir. C'est si court que ton cerveau reste &agrave; <span class="hl v">100&nbsp;% de concentration</span>.</p>
+
+    <div class="bloc-vert">
+      <div class="tag">Micro-session &middot; 5 min chrono</div>
+      <div class="ex">1 quiz de grammaire, 2 citations cl&eacute;s revues, 1 mouvement d'oral v&eacute;rifi&eacute;.</div>
+      <div class="dec"><b>Z&eacute;ro charge mentale</b>&nbsp;: l'information s'ancre dans ta m&eacute;moire &agrave; long terme sans aucun effort.</div>
+    </div>
+
+    <p class="dans">Dans l'app <b>Euph&eacute;misme</b>, chaque le&ccedil;on est calibr&eacute;e pile pour durer 5 minutes par jour.</p>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>
