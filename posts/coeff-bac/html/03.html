@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : coeff-bac 03</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 70px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 36px; font-size: 42px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+
+  .comparatif {
+    margin-top: auto;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .carte-comp {
+    background: rgba(255,253,248,.96);
+    border: 3px solid rgba(50,45,39,.12);
+    border-radius: 20px; padding: 18px 26px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 30px; font-weight: 800; color: var(--eel);
+  }
+  .carte-comp.top {
+    border-color: rgba(224,118,47,.45);
+    background: rgba(255,152,87,.12);
+  }
+  .val { font-size: 32px; font-weight: 900; }
+  .val.orange { color: var(--fox-dark); }
+  .val.gris { color: var(--wolf); }
+
+  .dans { margin-top: 20px; font-size: 28px; line-height: 1.32; font-weight: 800; color: var(--eel); }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-ambre">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">2</div>
+      <h1 class="title display">Plus lourd que<br>la philosophie</h1>
+    </div>
+
+    <p class="corps">Tout le monde panique sur la philo en Terminale. Pourtant, le fran&ccedil;ais en 1re rapporte <span class="hl j">plus de points</span> au dipl&ocirc;me.</p>
+
+    <div class="comparatif">
+      <div class="carte-comp">
+        <span>Philosophie (Terminale)</span>
+        <span class="val gris">Coeff 8</span>
+      </div>
+      <div class="carte-comp top">
+        <span><b>Fran&ccedil;ais 1re (&eacute;crit + oral)</b></span>
+        <span class="val orange">Coeff 10</span>
+      </div>
+    </div>
+
+    <p class="dans">Dans l'app <b>Euph&eacute;misme</b>, pr&eacute;pare ces 10 coefficients d&egrave;s septembre pour ne pas courir apr&egrave;s les points l'an prochain.</p>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

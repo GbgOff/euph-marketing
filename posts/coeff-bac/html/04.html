@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : coeff-bac 04</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 68px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 36px; font-size: 42px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 10px; }
+
+  .fiche-simu {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 10px;
+    border-radius: 28px;
+    padding: 24px 34px 26px;
+    box-shadow: 0 18px 34px rgba(50,45,39,.10);
+  }
+  .ligne-simu {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 0; font-size: 30px; font-weight: 800; color: var(--eel);
+  }
+  .badge-plus {
+    padding: 6px 16px; border-radius: 12px; font-weight: 900; font-size: 26px;
+    background: #EAF8E2; color: #2B661E; border: 2px solid #8FD475;
+  }
+  .badge-max {
+    padding: 6px 18px; border-radius: 12px; font-weight: 900; font-size: 28px;
+    background: #96E26E; color: #1F4D14; border: 2px solid #3F7A2F;
+  }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-ambre">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">3</div>
+      <h1 class="title display">La simulation&nbsp;:<br>+50 points d'avance</h1>
+    </div>
+
+    <p class="corps">Chaque point au-dessus de 10 est multipli&eacute; par 10. C'est l&agrave; que se joue <span class="hl v">ta mention au bac</span>.</p>
+
+    <div class="note manuscrit penche rouge">dans ta poche avant la Terminale</div>
+
+    <div class="fiche-simu">
+      <div class="ligne-simu">
+        <span>Moyenne 10/20</span>
+        <span style="color:var(--wolf)">0 pt d'avance (seuil)</span>
+      </div>
+      <div class="ligne-simu">
+        <span>Moyenne 12/20</span>
+        <span class="badge-plus">+20 points d'avance</span>
+      </div>
+      <div class="ligne-simu">
+        <span><b>Moyenne 15/20</b></span>
+        <span class="badge-max">+50 points d'avance</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>
