@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : trois-classeurs 04</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 70px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 36px; font-size: 42px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 10px; }
+
+  .dossier {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 10px;
+    border-radius: 28px;
+    padding: 24px 34px 26px;
+    box-shadow: 0 18px 34px rgba(50,45,39,.10);
+  }
+  .onglet-tab {
+    display: inline-block; padding: 6px 20px;
+    background: #7C90F5; color: #17256B; font-weight: 900; font-size: 24px;
+    border-radius: 12px; text-transform: uppercase; letter-spacing: .08em;
+    margin-bottom: 14px;
+  }
+  .ligne-dossier {
+    font-size: 30px; font-weight: 800; color: var(--eel); line-height: 1.36;
+    margin-bottom: 8px;
+  }
+  .ligne-dossier b { color: #17256B; font-weight: 900; }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-abricot">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">3</div>
+      <h1 class="title display">La bo&icirc;te &agrave; fiches<br>de m&eacute;thode</h1>
+    </div>
+
+    <p class="corps">Les outils transversaux. Les plans types, les <span class="hl b">connecteurs logiques</span> et les verbes d'analyse.</p>
+
+    <div class="note manuscrit penche rouge">tes automatismes d'examen</div>
+
+    <div class="dossier">
+      <div class="onglet-tab">Intercalaire M&eacute;thode</div>
+      <div class="ligne-dossier"><b>Les 3 fiches indispensables&nbsp;:</b> intro en 4 phrases, conclusion en 3 phrases, lexique des figures.</div>
+      <div class="ligne-dossier" style="color:var(--wolf)"><b>Le but&nbsp;:</b> ne plus jamais h&eacute;siter sur la structure d'un paragraphe.</div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

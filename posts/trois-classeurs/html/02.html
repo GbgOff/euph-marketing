@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : trois-classeurs 02</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 70px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 36px; font-size: 42px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 10px; }
+
+  .dossier {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 10px;
+    border-radius: 28px;
+    padding: 24px 34px 26px;
+    box-shadow: 0 18px 34px rgba(50,45,39,.10);
+    position: relative;
+  }
+  .onglet-tab {
+    display: inline-block; padding: 6px 20px;
+    background: #FFD84D; color: #5C4B00; font-weight: 900; font-size: 24px;
+    border-radius: 12px; text-transform: uppercase; letter-spacing: .08em;
+    margin-bottom: 14px;
+  }
+  .ligne-dossier {
+    font-size: 30px; font-weight: 800; color: var(--eel); line-height: 1.36;
+    margin-bottom: 8px;
+  }
+  .ligne-dossier b { color: var(--fox-dark); font-weight: 900; }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-abricot">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">1</div>
+      <h1 class="title display">Le classeur<br>d'oral exclusif</h1>
+    </div>
+
+    <p class="corps">Un classeur souple d&eacute;di&eacute;. Il ne contient que les <span class="hl j">20 textes officiels</span> et leurs analyses.</p>
+
+    <div class="note manuscrit penche rouge">aucun brouillon dedans</div>
+
+    <div class="dossier">
+      <div class="onglet-tab">Intercalaire Oral</div>
+      <div class="ligne-dossier"><b>Dans la pochette&nbsp;:</b> le texte vierge imprim&eacute; &agrave; gauche, la fiche des mouvements &agrave; droite.</div>
+      <div class="ligne-dossier" style="color:var(--wolf)"><b>&Agrave; jeter ailleurs&nbsp;:</b> les exercices d'intro, les polycopi&eacute;s de contexte inutilis&eacute;s.</div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>
