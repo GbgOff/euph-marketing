@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : trouver-sa-problematique 05</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 68px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 36px; font-size: 42px; line-height: 1.38; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 10px; }
+
+  .tableau-memo {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 10px;
+    border-radius: 28px;
+    padding: 24px 34px 26px;
+    box-shadow: 0 18px 34px rgba(50,45,39,.10);
+  }
+  .ligne-comp {
+    padding: 12px 16px; border-radius: 14px; margin-bottom: 12px;
+    font-size: 30px; font-weight: 800; line-height: 1.36;
+  }
+  .ligne-comp:last-child { margin-bottom: 0; }
+  .ligne-comp.ko { background: #FDE8EA; color: #8F1D2C; }
+  .ligne-comp.ok { background: #EAF7E8; color: #1D5E17; }
+  .label-comp {
+    font-size: 20px; font-weight: 900; text-transform: uppercase;
+    letter-spacing: .08em; display: block; margin-bottom: 2px;
+  }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-pervenche">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">4</div>
+      <h1 class="title display">Le test d'or&nbsp;:<br>oui ou non&nbsp;?</h1>
+    </div>
+
+    <p class="corps">Si on peut r&eacute;pondre par oui ou non &agrave; ta question, <span class="hl r">ce n'est pas un probl&egrave;me</span>.</p>
+
+    <div class="note manuscrit penche rouge">le bac note la tension, pas l'expos&eacute;</div>
+
+    <div class="tableau-memo">
+      <div class="ligne-comp ko">
+        <span class="label-comp">Descriptif (KO)</span>
+        &laquo;&nbsp;En quoi le th&eacute;&acirc;tre fait-il rire&nbsp;?&nbsp;&raquo;<br>
+        <i>R&eacute;ponse imm&eacute;diate&nbsp;: aucun d&eacute;bat possible.</i>
+      </div>
+      <div class="ligne-comp ok">
+        <span class="label-comp">Probl&eacute;matis&eacute; (OK)</span>
+        &laquo;&nbsp;Dans quelle mesure le rire dissimule-t-il une critique am&egrave;re&nbsp;?&nbsp;&raquo;<br>
+        <i>Appelle un d&eacute;passement et des nuances.</i>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">Le bac de fran&ccedil;ais en 5&nbsp;min par jour &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>
