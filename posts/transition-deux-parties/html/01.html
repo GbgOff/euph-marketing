@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : transition-deux-parties 01</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .title {
+    position: absolute; top: 240px; left: 168px; right: 66px;
+    font-size: 104px; line-height: 1.04; z-index: 25;
+  }
+  .accroche {
+    position: absolute; left: 168px; top: 790px; width: 800px; z-index: 30;
+    font-size: 44px; line-height: 1.34; font-weight: 800; color: var(--eel);
+  }
+  .accroche b { font-weight: 900; }
+  .compteur {
+    position: absolute; left: 168px; top: 1010px; z-index: 30;
+    display: flex; gap: 16px; align-items: center;
+  }
+  .compteur .arche {
+    width: 68px; height: 68px; border-radius: 20px 20px 6px 6px;
+    border: 4px solid rgba(50,45,39,.20);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px; font-weight: 900; color: var(--wolf);
+    background: var(--cream-hi);
+  }
+  .compteur .arche.on {
+    border-color: var(--fox-dark); background: var(--fox);
+    color: var(--on-accent); box-shadow: 0 8px 0 var(--fox-dark);
+  }
+  .note { position: absolute; left: 174px; top: 1140px; z-index: 34; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-vert">
+
+  <h1 class="title display">
+    R&eacute;ussir sa<br>
+    transition<br>
+    en <span class="hl v">3 temps</span>
+  </h1>
+
+  <p class="accroche">Arr&ecirc;te d'&eacute;crire &laquo;&nbsp;Cependant&nbsp;&raquo;&nbsp;: <b>la charni&egrave;re qui solidifie</b> toute ta copie.</p>
+
+  <div class="compteur">
+    <div class="arche on">&#9650; 1</div>
+    <div class="arche">&#9650; 2</div>
+    <div class="arche">&#9650; 3</div>
+    <div class="arche">&#9650; 4</div>
+    <div class="arche">&#9650; 5</div>
+  </div>
+
+  <div class="note manuscrit penche rouge">le pont solide entre tes deux grandes parties</div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

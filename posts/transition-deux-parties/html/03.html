@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : transition-deux-parties 03</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 68px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 32px; font-size: 42px; line-height: 1.36; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 8px; }
+
+  .pont-schema {
+    margin-top: auto;
+    display: flex; gap: 16px; align-items: stretch;
+  }
+  .pilier {
+    flex: 1; background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 9px;
+    border-radius: 24px; padding: 22px 20px;
+    box-shadow: 0 14px 26px rgba(50,45,39,.08);
+    display: flex; flex-direction: column;
+  }
+  .pilier.actif {
+    border-color: var(--fox-dark); background: #FFFDF9;
+    box-shadow: 0 16px 30px rgba(224,118,47,.16);
+  }
+  .pilier.inactif { opacity: .45; filter: grayscale(.7); }
+  .pilier-tag {
+    font-size: 20px; font-weight: 900; text-transform: uppercase;
+    letter-spacing: .12em; color: var(--fox-dark); margin-bottom: 8px;
+  }
+  .pilier-role { font-size: 24px; font-weight: 900; color: var(--eel); margin-bottom: 8px; }
+  .pilier-txt { font-size: 22px; line-height: 1.35; font-weight: 700; color: var(--wolf); margin-top: auto; }
+  .pilier-txt b { color: var(--eel); }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-vert">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">2</div>
+      <h1 class="title display">Trouve la fissure<br>du raisonnement</h1>
+    </div>
+
+    <p class="corps">Si ton grand I r&eacute;solvait le sujet, le devoir s'arr&ecirc;terait&nbsp;: <span class="hl r">pose le paradoxe</span>.</p>
+
+    <div class="note manuscrit penche rouge">la cl&eacute; de vo&ucirc;te qui fait basculer la copie</div>
+
+    <div class="pont-schema">
+      <div class="pilier inactif">
+        <div class="pilier-tag" style="color: var(--wolf);">Pilier 1</div>
+        <div class="pilier-role">L'acquis</div>
+        <div class="pilier-txt">Acquis du grand I valid&eacute;.</div>
+      </div>
+      <div class="pilier actif">
+        <div class="pilier-tag">Cl&eacute; de vo&ucirc;te &middot; Actif</div>
+        <div class="pilier-role">Le paradoxe</div>
+        <div class="pilier-txt">
+          &laquo;&nbsp;<span class="hl r">Toutefois</span>, r&eacute;duire le roman &agrave; un simple r&eacute;quisitoire pessimiste serait incomplet...&nbsp;&raquo;
+        </div>
+      </div>
+      <div class="pilier inactif">
+        <div class="pilier-tag" style="color: var(--wolf);">Pilier 2</div>
+        <div class="pilier-role">L'&eacute;lan</div>
+        <div class="pilier-txt">&Eacute;tape suivante...</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">M&eacute;thode officielle du bac de fran&ccedil;ais &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>
