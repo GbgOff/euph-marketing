@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : theatre-double-enonciation 02</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 68px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 32px; font-size: 42px; line-height: 1.36; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 8px; }
+
+  .plateau {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 9px;
+    border-radius: 26px; padding: 26px 30px;
+    box-shadow: 0 14px 26px rgba(50,45,39,.08);
+  }
+  .plateau-barre {
+    font-size: 20px; font-weight: 900; text-transform: uppercase;
+    letter-spacing: .14em; color: var(--fox-dark); margin-bottom: 12px;
+  }
+  .dialogue-scenique {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px; background: #FAF6EF; border-radius: 18px;
+    border: 2px solid rgba(50,45,39,.10);
+  }
+  .perso { font-size: 26px; font-weight: 900; color: var(--eel); }
+  .fleche-dialogue { font-size: 32px; font-weight: 900; color: var(--rouge); }
+  .replique-texte {
+    margin-top: 14px; font-size: 28px; line-height: 1.35; font-weight: 800; color: var(--eel);
+  }
+  .analyse-scenique {
+    margin-top: 12px; font-size: 24px; font-weight: 700; color: var(--wolf); line-height: 1.35;
+  }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-pervenche">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">1</div>
+      <h1 class="title display">Rep&egrave;re le destinataire<br>direct sur sc&egrave;ne</h1>
+    </div>
+
+    <p class="corps">C'est le premier niveau de parole&nbsp;: <span class="hl b">l'interaction visible</span> entre les com&eacute;diens.</p>
+
+    <div class="note manuscrit penche rouge">ce que le personnage veut faire croire &agrave; l'autre</div>
+
+    <div class="plateau">
+      <div class="plateau-barre">Sur les planches &middot; Niveau 1</div>
+      <div class="dialogue-scenique">
+        <span class="perso">Dorante (le ma&icirc;tre)</span>
+        <span class="fleche-dialogue">&rarr;&rarr;&rarr;</span>
+        <span class="perso">Cliton (le valet)</span>
+      </div>
+      <div class="replique-texte">
+        Dans <i>Le Menteur</i> de Corneille&nbsp;: Dorante invente des r&eacute;cits de guerre imaginaires pour subjuguer son valet.
+      </div>
+      <div class="analyse-scenique">
+        <span class="hl r">Niveau imm&eacute;diat</span>&nbsp;: le valet est dupe, le mensonge fonctionne dans l'intrigue.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">M&eacute;thode officielle du bac de fran&ccedil;ais &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

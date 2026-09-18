@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : theatre-double-enonciation 05</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 68px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 32px; font-size: 42px; line-height: 1.36; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 8px; }
+
+  .regie-questions {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 9px;
+    border-radius: 26px; padding: 26px 30px;
+    box-shadow: 0 14px 26px rgba(50,45,39,.08);
+  }
+  .question-item {
+    display: flex; align-items: baseline; gap: 16px;
+    padding: 12px 0; border-bottom: 2px dashed rgba(50,45,39,.15);
+    font-size: 26px; font-weight: 700; line-height: 1.35; color: var(--eel);
+  }
+  .question-item:last-child { border-bottom: none; }
+  .q-num {
+    font-size: 22px; font-weight: 900; color: var(--fox-dark);
+    letter-spacing: .08em; min-width: 32px;
+  }
+  .q-num b { color: var(--eel); }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-pervenche">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">&checkmark;</div>
+      <h1 class="title display">Les 3 r&eacute;flexes<br>devant une sc&egrave;ne</h1>
+    </div>
+
+    <p class="corps">Pose-toi syst&eacute;matiquement ces 3 questions avant de <span class="hl j">r&eacute;diger ton analyse</span>.</p>
+
+    <div class="note manuscrit penche rouge">&agrave; ressortir &agrave; l'&eacute;crit comme &agrave; l'oral</div>
+
+    <div class="regie-questions">
+      <div class="question-item">
+        <span class="q-num">1.</span>
+        <span><b>Qui sait quoi&nbsp;?</b> Rep&egrave;re le d&eacute;calage d'information entre personnages et public.</span>
+      </div>
+      <div class="question-item">
+        <span class="q-num">2.</span>
+        <span><b>Quel sous-texte&nbsp;?</b> D&eacute;code l'intention cach&eacute;e derri&egrave;re les mots de la r&eacute;plique.</span>
+      </div>
+      <div class="question-item">
+        <span class="q-num">3.</span>
+        <span><b>Que ressent la salle&nbsp;?</b> Rire, malaise, piti&eacute;&nbsp;: l'effet produit sur le spectateur.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">M&eacute;thode officielle du bac de fran&ccedil;ais &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>
