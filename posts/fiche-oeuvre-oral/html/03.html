@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : fiche-oeuvre-oral 03</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 68px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 32px; font-size: 42px; line-height: 1.36; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 8px; }
+
+  .matrice {
+    margin-top: auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  .cadran {
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 8px;
+    border-radius: 22px; padding: 18px 20px;
+    box-shadow: 0 12px 22px rgba(50,45,39,.06);
+  }
+  .cadran.actif {
+    grid-column: span 2;
+    border-color: #2E8B22; background: #FFFDF9;
+    box-shadow: 0 16px 30px rgba(46,139,34,.18);
+  }
+  .cadran.inactif { opacity: .45; filter: grayscale(.7); }
+  .cadran-tag {
+    font-size: 20px; font-weight: 900; text-transform: uppercase;
+    letter-spacing: .12em; color: #2E8B22; margin-bottom: 6px;
+  }
+  .cadran-titre { font-size: 24px; font-weight: 900; color: var(--eel); margin-bottom: 6px; }
+  .cadran-txt { font-size: 24px; line-height: 1.35; font-weight: 700; color: var(--eel); }
+  .cadran-txt b { font-weight: 900; }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-ambre">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">2</div>
+      <h1 class="title display">Choisis une sc&egrave;ne<br>&eacute;chantillon</h1>
+    </div>
+
+    <p class="corps">Raconter toute l'histoire est une erreur&nbsp;: <span class="hl v">analyse un passage pr&eacute;cis</span> en d&eacute;tail.</p>
+
+    <div class="note manuscrit penche rouge">la preuve irr&eacute;futable que tu as lu l'ouvrage</div>
+
+    <div class="matrice">
+      <div class="cadran inactif">
+        <div class="cadran-tag">Case 1</div>
+        <div class="cadran-titre">D&eacute;clic personnel</div>
+      </div>
+      <div class="cadran actif">
+        <div class="cadran-tag">Case 2 &middot; La sc&egrave;ne &eacute;chantillon &middot; Actif</div>
+        <div class="cadran-titre">L'all&eacute;gorie du grand arbre priv&eacute; d'eau</div>
+        <div class="cadran-txt">
+          La Bo&eacute;tie compare le tyran &agrave; un arbre immense&nbsp;: <span class="hl v">nul besoin de le couper</span>, il suffit de ne plus l'alimenter pour qu'il s'effondre tout seul sous son propre poids.
+        </div>
+      </div>
+      <div class="cadran inactif">
+        <div class="cadran-tag">Case 3</div>
+        <div class="cadran-titre">Citation cl&eacute;</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">M&eacute;thode officielle du bac de fran&ccedil;ais &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

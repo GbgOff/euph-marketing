@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : fiche-oeuvre-oral 05</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 68px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 32px; font-size: 42px; line-height: 1.36; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 8px; }
+
+  .grille-complete {
+    margin-top: auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  }
+  .case-matrice {
+    background: rgba(255,253,248,.96);
+    border: 3px solid rgba(50,45,39,.12);
+    border-bottom-width: 7px;
+    border-radius: 20px; padding: 16px 18px;
+    box-shadow: 0 10px 20px rgba(50,45,39,.06);
+  }
+  .case-tag {
+    font-size: 19px; font-weight: 900; text-transform: uppercase;
+    letter-spacing: .1em; margin-bottom: 4px;
+  }
+  .c1 .case-tag { color: #D99C28; }
+  .c2 .case-tag { color: #2E8B22; }
+  .c3 .case-tag { color: #2F4FB8; }
+  .c4 .case-tag { color: #C4485C; }
+  .case-titre { font-size: 22px; font-weight: 900; color: var(--eel); margin-bottom: 4px; }
+  .case-desc { font-size: 20px; line-height: 1.3; font-weight: 700; color: var(--wolf); }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-ambre">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">&checkmark;</div>
+      <h1 class="title display">La matrice 2&times;2<br>compl&egrave;te</h1>
+    </div>
+
+    <p class="corps">Remplis cette grille sur une <span class="hl o">seule feuille</span> d&egrave;s la lecture de ton livre.</p>
+
+    <div class="note manuscrit penche rouge">tout ce dont tu as besoin pour l'entretien</div>
+
+    <div class="grille-complete">
+      <div class="case-matrice c1">
+        <div class="case-tag">Case 1</div>
+        <div class="case-titre">Le d&eacute;clic</div>
+        <div class="case-desc">Pourquoi l'&oelig;uvre r&eacute;sonne avec toi (sans dire qu'elle &eacute;tait courte).</div>
+      </div>
+      <div class="case-matrice c2">
+        <div class="case-tag">Case 2</div>
+        <div class="case-titre">L'&eacute;chantillon</div>
+        <div class="case-desc">Une seule sc&egrave;ne analys&eacute;e en d&eacute;tail au lieu de tout r&eacute;sumer.</div>
+      </div>
+      <div class="case-matrice c3">
+        <div class="case-tag">Case 3</div>
+        <div class="case-titre">La citation</div>
+        <div class="case-desc">Moins de 10 mots retenus mot &agrave; mot pour asseoir ton propos.</div>
+      </div>
+      <div class="case-matrice c4">
+        <div class="case-tag">Case 4</div>
+        <div class="case-titre">Le d&eacute;bat</div>
+        <div class="case-desc">Une question ouverte &agrave; poser au jury pour cr&eacute;er l'&eacute;change.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">M&eacute;thode officielle du bac de fran&ccedil;ais &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>
