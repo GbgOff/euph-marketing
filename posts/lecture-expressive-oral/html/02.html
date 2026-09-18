@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : lecture-expressive-oral 02</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 68px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 32px; font-size: 42px; line-height: 1.36; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 8px; }
+
+  .partition {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 9px;
+    border-radius: 26px; padding: 26px 30px;
+    box-shadow: 0 14px 26px rgba(50,45,39,.08);
+  }
+  .partition-entete {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 2px dashed rgba(50,45,39,.15);
+  }
+  .tempo {
+    font-size: 24px; font-weight: 900; color: var(--encre);
+    font-family: 'Ink Free', 'Segoe Print', cursive;
+  }
+  .extrait-titre {
+    font-size: 22px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: .12em; color: var(--wolf);
+  }
+  .vers-bloc {
+    font-size: 34px; line-height: 1.6; font-weight: 800; color: var(--eel);
+  }
+  .silence {
+    display: inline-block; font-size: 36px; font-weight: 900;
+    color: var(--rouge); margin: 0 8px; letter-spacing: -2px;
+  }
+  .regle-partition {
+    margin-top: 16px; padding-top: 14px; border-top: 2px solid rgba(50,45,39,.10);
+    font-size: 26px; font-weight: 700; color: var(--wolf); line-height: 1.35;
+  }
+  .regle-partition b { color: var(--eel); font-weight: 800; }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-lilas">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">1</div>
+      <h1 class="title display">Trace deux barres<br>&agrave; chaque silence</h1>
+    </div>
+
+    <p class="corps">L'erreur la plus fr&eacute;quente est de courir apr&egrave;s son souffle&nbsp;: <span class="hl b">force les arr&ecirc;ts</span> au crayon.</p>
+
+    <div class="note manuscrit penche rouge">le jury adore quand tu sais poser des silences</div>
+
+    <div class="partition">
+      <div class="partition-entete">
+        <span class="tempo">&sim; Adagio, souffle pos&eacute;</span>
+        <span class="extrait-titre">Rimbaud &middot; Sensation</span>
+      </div>
+      <div class="vers-bloc">
+        &laquo;&nbsp;Par les soirs bleus d'&eacute;t&eacute; <span class="silence">//</span> j'irai dans les sentiers <span class="silence">//</span><br>
+        Picot&eacute; par les bl&eacute;s <span class="silence">//</span> fouler l'herbe menue... <span class="silence">//</span>&nbsp;&raquo;
+      </div>
+      <div class="regle-partition">
+        <span class="hl j">La r&egrave;gle d'or</span>&nbsp;: deux barres <span class="silence">//</span> valent <b>2 secondes de silence</b> &agrave; la c&eacute;sure.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">M&eacute;thode officielle du bac de fran&ccedil;ais &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

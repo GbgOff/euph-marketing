@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : lecture-expressive-oral 01</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .title {
+    position: absolute; top: 240px; left: 168px; right: 66px;
+    font-size: 104px; line-height: 1.04; z-index: 25;
+  }
+  .accroche {
+    position: absolute; left: 168px; top: 790px; width: 800px; z-index: 30;
+    font-size: 44px; line-height: 1.34; font-weight: 800; color: var(--eel);
+  }
+  .accroche b { font-weight: 900; }
+  .compteur {
+    position: absolute; left: 168px; top: 1010px; z-index: 30;
+    display: flex; gap: 16px; align-items: center;
+  }
+  .compteur .note-musique {
+    width: 68px; height: 68px; border-radius: 50%;
+    border: 4px solid rgba(50,45,39,.20);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; font-weight: 900; color: var(--wolf);
+    background: var(--cream-hi);
+  }
+  .compteur .note-musique.on {
+    border-color: var(--fox-dark); background: var(--fox);
+    color: var(--on-accent); box-shadow: 0 8px 0 var(--fox-dark);
+  }
+  .note { position: absolute; left: 174px; top: 1140px; z-index: 34; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-lilas">
+
+  <h1 class="title display">
+    R&eacute;ussir sa<br>
+    lecture<br>
+    <span class="hl l">expressive</span>
+  </h1>
+
+  <p class="accroche">2 points &agrave; l'oral en 120 secondes&nbsp;: <b>transforme ton texte en partition</b>.</p>
+
+  <div class="compteur">
+    <div class="note-musique on">&#9834; 1</div>
+    <div class="note-musique">&#9834; 2</div>
+    <div class="note-musique">&#9834; 3</div>
+    <div class="note-musique">&#9834; 4</div>
+    <div class="note-musique">&#9834; 5</div>
+  </div>
+
+  <div class="note manuscrit penche rouge">la premi&egrave;re impression que tu laisses au jury</div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>

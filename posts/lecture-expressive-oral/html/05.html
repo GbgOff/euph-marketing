@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Euphémisme : lecture-expressive-oral 05</title>
+<link rel="stylesheet" href="../../../design/euphemisme.css">
+<style>
+  .zone {
+    position: absolute; left: 168px; right: 74px; top: 186px; bottom: 250px;
+    z-index: 30; display: flex; flex-direction: column;
+  }
+  .tete { display: flex; align-items: flex-start; gap: 34px; }
+  .numero {
+    flex: none; font-size: 76px; font-weight: 900; line-height: 1;
+    color: var(--rouge); padding: 6px 26px 14px;
+    border: 6px solid var(--rouge);
+    border-radius: 58% 42% 54% 46% / 48% 56% 44% 52%;
+    transform: rotate(-2deg);
+  }
+  .title { font-size: 68px; line-height: 1.04; padding-top: 4px; }
+  .corps { margin-top: 32px; font-size: 42px; line-height: 1.36; font-weight: 700; color: var(--eel); }
+  .note  { align-self: flex-end; text-align: right; margin-top: 8px; }
+
+  .pupitre {
+    margin-top: auto;
+    background: rgba(255,253,248,.96);
+    border: 4px solid rgba(50,45,39,.12);
+    border-bottom-width: 9px;
+    border-radius: 26px; padding: 26px 30px;
+    box-shadow: 0 14px 26px rgba(50,45,39,.08);
+  }
+  .pupitre-ligne {
+    display: flex; align-items: center; gap: 24px;
+    padding: 14px 0; border-bottom: 2px dashed rgba(50,45,39,.15);
+  }
+  .pupitre-ligne:last-child { border-bottom: none; }
+  .symbole {
+    width: 68px; height: 68px; border-radius: 18px;
+    background: #FAF6EF; border: 3px solid rgba(50,45,39,.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; font-weight: 900; color: var(--eel); flex: none;
+  }
+  .pupitre-txt {
+    font-size: 28px; line-height: 1.3; font-weight: 700; color: var(--eel);
+  }
+  .pupitre-txt b { font-weight: 900; }
+
+  .sign { position: absolute; left: 168px; bottom: 96px; z-index: 35; }
+</style>
+</head>
+<body>
+<div class="canvas cahier t-lilas">
+
+  <div class="zone">
+
+    <div class="tete">
+      <div class="numero">&checkmark;</div>
+      <h1 class="title display">Les 3 symboles<br>sur ton texte</h1>
+    </div>
+
+    <p class="corps">Prends 5 minutes pendant tes 30 minutes de pr&eacute;paration pour <span class="hl j">marquer ton extrait</span>.</p>
+
+    <div class="note manuscrit penche rouge">&agrave; r&eacute;p&eacute;ter &agrave; chaque oral blanc</div>
+
+    <div class="pupitre">
+      <div class="pupitre-ligne">
+        <div class="symbole" style="color: var(--rouge);">//</div>
+        <div class="pupitre-txt"><b>Double barre rouge</b>&nbsp;: 2 secondes de silence &agrave; la c&eacute;sure.</div>
+      </div>
+      <div class="pupitre-ligne">
+        <div class="symbole" style="color: #2E8B22;">&#8605;</div>
+        <div class="pupitre-txt"><b>Arc de liaison vert</b>&nbsp;: rejet enjamb&eacute; sans reprise d'air.</div>
+      </div>
+      <div class="pupitre-ligne">
+        <div class="symbole" style="color: var(--fox-dark);">&#8600;</div>
+        <div class="pupitre-txt"><b>Fl&egrave;che descendante</b>&nbsp;: chute finale et regard pos&eacute; sur le jury.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sign">
+    <div class="foxbadge"></div>
+    <div>
+      <div class="url">euphemisme.fr</div>
+      <div class="sub">M&eacute;thode officielle du bac de fran&ccedil;ais &middot; <b>gratuit</b></div>
+    </div>
+  </div>
+
+</div>
+<script src="../../../design/fox.js"></script>
+</body>
+</html>
